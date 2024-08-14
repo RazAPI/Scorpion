@@ -5,9 +5,13 @@ Slaze is a new & upcoming script hub on the market to becoming the best and carr
 Slaze has features like
 
 -- 8+ Universal Scripts 📜
+
 -- A keysystem is not needed! 🔐
+
 -- Player Class scripts like Camera Noclip, Day & Night toggle, and other more. 👻
+
 -- Exploit Class scripts which carry MoreUNC, UNCTest, and exploit UI's. 💻
+
 -- Other scripts including game hubs, Admin scripts, and more! 💡
 
 Slaze modifies the roblox client and is looking forward to enhance your experience with Roblox Exploiting.
