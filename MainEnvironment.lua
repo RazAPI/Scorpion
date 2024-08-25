@@ -2473,4 +2473,3 @@ end
 
 syn.protect_gui(DrawingDict)
 syn.protect_gui(ClipboardUI)
-print("loaded funcs")
