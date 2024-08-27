@@ -1,248 +1,272 @@
-
 --[[
-Thanks to insaladarel on Discord, No this is not gonna be used.
+  Thanks to Insaladarel on discord.  
 ]]
 
-
-local suc, rec = pcall(function()
-	getgenv().getscripts = function() 
-		local scripts = {}
-		for _, scriptt in game:GetDescendants() do
-			if scriptt:isA("LocalScript") or scriptt:isA("ModuleScript") then
-				table.insert(scripts, scriptt)
-			end
-		end
-		return scripts
-	end 
-end) 
-if not suc then warn("[ SALAD ]: getscripts failed: "..tostring(rec)) end 
-
-local suc, rec = pcall(function()
-    getgenv().getloadedmodules = function()
-        local modulescripts = {}
-        for _, obj in pairs(game:GetDescendants()) do
-            if typeof(obj) == "Instance" and obj:IsA("ModuleScript") then table.insert(modulescripts, obj) end
-        end
-        return modulescripts
-    end 
-end) 
-if not suc then warn("[ SALAD ]: getloadedmodules failed: "..tostring(rec)) end 
-
-local suc, rec = pcall(function()
-    getgenv().getrunningscripts = function()
-        local runningScripts = {}
-    
-        for _, obj in pairs(game:GetDescendants()) do
-            if typeof(obj) == "Instance" and obj:IsA("ModuleScript") then
-                table.insert(runningScripts, obj)
-            elseif typeof(obj) == "Instance" and obj:IsA("LocalScript") then
-                if obj.Enabled == true then
-                    table.insert(runningScripts, obj)
-                end
-            end
-        end
-    
-        return runningScripts
+getgenv().checkcaller = function() return true end
+local logserv = game:GetService("LogService")
+local cached, ConsoleClone, identity, log = {}, nil, nil, nil
+getgenv().cache = {
+    iscached = function(part) return cached[part] ~= 'nil' end,
+    invalidate = function(part) cached[part] = 'nil'; part.Parent = nil end,
+    replace = function(part, replacement)
+        cached[part] = replacement
+        replacement.Name, replacement.Parent, part.Parent = part.Name, part.Parent, nil
     end
-end)
-if not suc then warn("[ SALAD ]: getrunningscripts failed: "..tostring(rec)) end 
+}
 
-local suc, rec = pcall(function()
-    getgenv().hookfunction = function(original, hook) 
-        if type(original) ~= "function" then
-            error("The first arg must be a function (original func).")
+local function check(func, ...) return pcall(func, ...) end
+
+function identifyexecutor()
+ return "Slaze","3.197.40"
+end
+
+
+log = logserv.MessageOut:Connect(function(msg)
+    if msg:find("Current identity is") then identity = tonumber(msg:gsub('Current identity is', ''):match("%d+")) end 
+end)
+
+printidentity()
+
+getgenv().getthreadidentity = function()
+    return identity 
+end
+
+getgenv().printidentity = function()
+    print("Current identity is "..getthreadidentity()) 
+end 
+
+getgenv().getidentity = getthreadidentity
+getgenv().getthreadcontext = getthreadidentity
+getgenv().setthreadidentity = function(newidentity) identity = newidentity end
+getgenv().setidentity = setthreadidentity
+getgenv().setthreadcontext = setthreadidentity
+
+local Console = Instance.new("ScreenGui")
+local ConsoleFrame = Instance.new("Frame")
+local Topbar = Instance.new("Frame")
+local _CORNER = Instance.new("UICorner")
+local ConsoleCorner = Instance.new("UICorner")
+local CornerHide = Instance.new("Frame")
+local DontModify = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local CornerHide2 = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local UIPadding = Instance.new("UIPadding")
+local ConsoleIcon = Instance.new("ImageLabel")
+local Holder = Instance.new("ScrollingFrame")
+local MessageTemplate = Instance.new("TextLabel")
+local InputTemplate = Instance.new("TextBox")
+local UIListLayout = Instance.new("UIListLayout")
+local HolderPadding = Instance.new("UIPadding")
+
+Console.Name = "Console"
+Console.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ConsoleFrame.Name, ConsoleFrame.BackgroundColor3, ConsoleFrame.BorderColor3, ConsoleFrame.BorderSizePixel, ConsoleFrame.Position, ConsoleFrame.Size = "ConsoleFrame", Color3.fromRGB(0, 0, 0), Color3.fromRGB(0, 0, 0), 0, UDim2.new(0.096, 0, 0.221, 0), UDim2.new(0, 888, 0, 577)
+Topbar.Name, Topbar.BackgroundColor3, Topbar.BorderColor3, Topbar.BorderSizePixel, Topbar.Position, Topbar.Size = "Topbar", Color3.fromRGB(20, 20, 20), Color3.fromRGB(0, 0, 0), 0, UDim2.new(0, 0, -0.00046, 0), UDim2.new(1, 0, 0, 32)
+_CORNER.Name, ConsoleCorner.Name = "_CORNER", "ConsoleCorner"
+CornerHide.Name, CornerHide.BackgroundColor3, CornerHide.BorderColor3, CornerHide.BorderSizePixel, CornerHide.Position, CornerHide.Size = "CornerHide", Color3.fromRGB(20, 20, 20), Color3.fromRGB(0, 0, 0), 0, UDim2.new(0, 0, 0.028, 0), UDim2.new(1, 0, 0, 12)
+DontModify.Name, DontModify.BackgroundColor3, DontModify.BorderColor3, DontModify.BorderSizePixel, DontModify.Position, DontModify.Size = "DontModify", Color3.fromRGB(20, 20, 20), Color3.fromRGB(0, 0, 0), 0, UDim2.new(0.982, 0, 0.028, 0), UDim2.new(-0.007, 21, 0.972, 0)
+UICorner.Parent = DontModify
+CornerHide2.Name, CornerHide2.AnchorPoint, CornerHide2.BackgroundColor3, CornerHide2.BorderColor3, CornerHide2.BorderSizePixel, CornerHide2.Position, CornerHide2.Size = "CornerHide2", Vector2.new(1, 0), Color3.fromRGB(20, 20, 20), Color3.fromRGB(0, 0, 0), 0, UDim2.new(1, 0, 0.045, 0), UDim2.new(0, 9, 0.955, 0)
+Title.Name, Title.BackgroundColor3, Title.BackgroundTransparency, Title.BorderColor3, Title.BorderSizePixel, Title.Position, Title.Size, Title.Font, Title.Text, Title.TextColor3, Title.TextSize, Title.TextXAlignment = "Title", Color3.fromRGB(255, 255, 255), 1, Color3.fromRGB(0, 0, 0), 0, UDim2.new(0.044, 0, 0, 0), UDim2.new(0, 164, 0, 30), Enum.Font.GothamMedium, "rconsole title", Color3.fromRGB(255, 255, 255), 17, Enum.TextXAlignment.Left
+UIPadding.Parent, UIPadding.PaddingTop = Title, UDim.new(0, 5)
+ConsoleIcon.Name, ConsoleIcon.BackgroundColor3, ConsoleIcon.BackgroundTransparency, ConsoleIcon.BorderColor3, ConsoleIcon.BorderSizePixel, ConsoleIcon.Position, ConsoleIcon.Size, ConsoleIcon.Image = "ConsoleIcon", Color3.fromRGB(255, 255, 255), 1, Color3.fromRGB(0, 0, 0), 0, UDim2.new(0.01, 0, 0.00087, 0), UDim2.new(0, 31, 0, 31), "http://www.roblox.com/asset/?id=11843683545"
+Holder.Name, Holder.Active, Holder.BackgroundColor3, Holder.BackgroundTransparency, Holder.BorderColor3, Holder.BorderSizePixel, Holder.Position, Holder.Size, Holder.ScrollBarThickness, Holder.CanvasSize, Holder.AutomaticCanvasSize = "Holder", true, Color3.fromRGB(20, 20, 20), 1, Color3.fromRGB(0, 0, 0), 0, UDim2.new(0, 0, 0.0546, 0), UDim2.new(1, 0, 0.9454, 0), 8, UDim2.new(0, 0, 0, 0), Enum.AutomaticSize.XY
+MessageTemplate.Name, MessageTemplate.BackgroundColor3, MessageTemplate.BackgroundTransparency, MessageTemplate.BorderColor3, MessageTemplate.BorderSizePixel, MessageTemplate.Size, MessageTemplate.Visible, MessageTemplate.Font, MessageTemplate.Text, MessageTemplate.TextColor3, MessageTemplate.TextSize, MessageTemplate.TextXAlignment, MessageTemplate.TextYAlignment, MessageTemplate.RichText = "MessageTemplate", Color3.fromRGB(255, 255, 255), 1, Color3.fromRGB(0, 0, 0), 0, UDim2.new(0.9745, 0, 0.03, 0), false, Enum.Font.RobotoMono, "TEMPLATE", Color3.fromRGB(255, 255, 255), 20, Enum.TextXAlignment.Left, Enum.TextYAlignment.Top, true
+UIListLayout.Parent, UIListLayout.SortOrder, UIListLayout.Padding = Holder, Enum.SortOrder.LayoutOrder, UDim.new(0, 4)
+HolderPadding.Name, HolderPadding.Parent, HolderPadding.PaddingLeft, HolderPadding.PaddingTop = "HolderPadding", Holder, UDim.new(0, 15), UDim.new(0, 15)
+InputTemplate.Name, InputTemplate.BackgroundColor3, InputTemplate.BackgroundTransparency, InputTemplate.BorderColor3, InputTemplate.BorderSizePixel, InputTemplate.Size, InputTemplate.Visible, InputTemplate.RichText, InputTemplate.Font, InputTemplate.Text, InputTemplate.PlaceholderText, InputTemplate.TextColor3, InputTemplate.TextSize, InputTemplate.TextXAlignment, InputTemplate.TextYAlignment = "InputTemplate", Color3.fromRGB(255, 255, 255), 1, Color3.fromRGB(0, 0, 0), 0, UDim2.new(0.9745, 0, 0.03, 0), false, true, Enum.Font.RobotoMono, "", '', Color3.fromRGB(255, 255, 255), 20, Enum.TextXAlignment.Left, Enum.TextYAlignment.Top
+
+local colors = {
+    BLACK = Color3.fromRGB(50, 50, 50), BLUE = Color3.fromRGB(0, 0, 204), GREEN = Color3.fromRGB(0, 255, 0),
+    CYAN = Color3.fromRGB(0, 255, 255), RED = Color3.fromHex('#5A0101'), MAGENTA = Color3.fromRGB(255, 0, 255),
+    BROWN = Color3.fromRGB(165, 42, 42), LIGHT_GRAY = Color3.fromRGB(211, 211, 211), DARK_GRAY = Color3.fromRGB(169, 169, 169),
+    LIGHT_BLUE = Color3.fromRGB(173, 216, 230), LIGHT_GREEN = Color3.fromRGB(144, 238, 144), LIGHT_CYAN = Color3.fromRGB(224, 255, 255),
+    LIGHT_RED = Color3.fromRGB(255, 204, 203), LIGHT_MAGENTA = Color3.fromRGB(255, 182, 193), YELLOW = Color3.fromRGB(255, 255, 0),
+    WHITE = Color3.fromRGB(255, 255, 255), ORANGE = Color3.fromRGB(255, 186, 12)
+}
+
+local MessageColor = colors['WHITE']
+
+getgenv().rconsolecreate = function()
+    local Clone = Console:Clone()
+    Clone.Parent = gethui()
+    ConsoleClone = Clone
+    ConsoleClone.ConsoleFrame.Topbar.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            startDrag(input, ConsoleClone.ConsoleFrame)
         end
-        if type(hook) ~= "function" then
-            error("The second arg must be a function (hook).")
+    end)
+end
+
+getgenv().rconsoledestroy = function()
+    if ConsoleClone then ConsoleClone:Destroy() end
+    ConsoleClone = nil
+end
+
+getgenv().rconsoleprint = function(msg, cc)
+    local CONSOLE = ConsoleClone or Console
+    repeat task.wait() until ConsoleQueue:IsEmpty()
+    msg = tostring(msg)
+    local last_color = nil
+
+    msg = msg:gsub('@@(%a+)@@', function(color)
+        local rgbColor = colors[color:upper()]
+        if rgbColor then
+            local fontTag = string.format('<font color="rgb(%d,%d,%d)">', rgbColor.R * 255, rgbColor.G * 255, rgbColor.B * 255)
+            local result = last_color and '</font>' .. fontTag or fontTag
+            last_color = color
+            return result
         end
-        local hooked = function(...)
-            return hook(original, ...)
-        end
-        local info = debug.getinfo(original)
-        if info and info.name then
-            getgenv()[info.name] = hooked
+        return '@@' .. color .. '@@'
+    end)
+
+    if last_color then msg = msg .. '</font>' end
+
+    if msg:match('<font color=".+">.+</font>') and msg:match('<font color=".+"></font>') == msg then
+        MessageColor = colors[last_color]
+        return
+    end
+
+    local tmp = MessageTemplate:Clone()
+    tmp.Parent = CONSOLE.ConsoleFrame.Holder
+    tmp.Text = msg
+    tmp.Visible = true
+    tmp.TextColor3 = cc or MessageColor
+end
+
+getgenv().rconsoleinput = function()
+    local CONSOLE = ConsoleClone or Console
+    repeat task.wait() until ConsoleQueue:IsEmpty()
+    ConsoleQueue:Queue('input')
+    local box = InputTemplate:Clone()
+    local val
+    box.Parent = CONSOLE.ConsoleFrame.Holder
+    box.Visible = true
+    box.TextEditable = true
+    box.TextColor3 = MessageColor
+
+    box.FocusLost:Connect(function(focused)
+        if focused then val = box.Text; ConsoleQueue:Update() end
+    end)
+
+    while true do
+        if box.Text:sub(-1) == '_' or box.Text == '' or not box:IsFocused() then
+            box.TextColor3 = Color3.fromRGB(255, 255, 255)
+            box.Text = box.Text .. '_'
+
+            for _ = 1, 100 do
+                task.wait(0.5)
+                if box:IsFocused() then
+                    box.TextColor3 = MessageColor
+                    break
+                end
+                box.Text = box.Text:sub(-1) == '_' and box.Text:sub(1, -2) or box.Text .. '_'
+            end
+            if box:IsFocused() then break end
         else
-            error("Failed to get function name")
-        end
-    
-        return original
-    end
-end) 
-if not suc then warn("[ SALAD ]: hookfunction failed: "..tostring(rec)) end
-
-local suc, rec = pcall(function()
-    getgenv().loadfile = function(file)
-        return loadstring(readfile(file))  -- oh come on, not even that nova? 
-    end 
-end)
-if not suc then warn("[ SALAD ]: loadfile failed: "..tostring(rec)) end 
-
-local hiddenpropr = {}
-local suc, rec = pcall(function()
-    getgenv().gethiddenproperty = function(instance, property) 
-        local instancepropr = hiddenpropr[instance]
-        if instancepropr and instancepropr[property] then
-            return instancepropr[property], true
-        end
-        return nil, false
-    end
-end)
-if not suc then warn("[ SALAD ]: gethiddenproperty failed: "..tostring(rec)) end 
-
-local suc, rec = pcall(function()
-    getgenv().sethiddenproperty = function(instance, property, value)
-        local instancepropr = hiddenpropr[instance]
-        if not instancepropr then
-            instancepropr = {}
-            hiddenpropr[instance] = instancepropr
-        end
-        instancepropr[property] = value
-        return true
-    end
-end) 
-if not suc then warn("[ SALAD ]: sethiddenproperty failed: "..tostring(rec)) end 
-
-local suc, rec = pcall(function()
-    getgenv().WebSocket = {} -- yes this isnt exactly how it works, what do you expect me to make in lua? 
-    getgenv().WebSocket.connect = function(url)
-        local onmsgws = Instance.new("BindableEvent")
-        local onclosews = Instance.new("BindableEvent")
-        local connected = true
-        local websocket = {}
-        function websocket:Send(message)
-            if connected then
-                onmsgws:Fire(message)
-            else
-                error("WebSocket is closed")
-            end
-        end
-        function websocket:Close()
-            if connected then
-                connected = false
-                onclosews:Fire()
-            else
-                error("WebSocket is already closed")
-            end
-        end
-        websocket.OnMessage = onmsgws.Event
-        websocket.OnClose = onclosews.Event
-    
-        return websocket
-    end
-end) 
-if not suc then warn("[ SALAD ]: websocket failed: "..tostring(rec)) end 
-
-local suc, rec = pcall(function()
-    getgenv().firesignal = function(instance: Instance, signalname: string, args: any)
-        if instance and signalname then
-            local signal = instance[signalname]
-            if signal then
-                for _, connection in ipairs(getconnections(signal)) do
-                    if args then
-                        connection:Fire(args)
-                    else
-                        connection:Fire()
-                    end
-                end
-            end
+            task.wait(0.1)
         end
     end
-end)
-if not suc then warn("[ SALAD ]: firesignal failed: "..tostring(rec)) end 
-local suc, rec = pcall(function()
-    getgenv().firetouchinterest = function(part: Instance, touched: boolean)
-        firesignal(part, touched and "Touched" or touched == false and "TouchEnded" or "Touched")
-    end
-end)
-if not suc then warn("[ SALAD ]: firetouchinterest failed: "..tostring(rec)) end 
-local suc, rec = pcall(function()
-    getgenv().fireproximityprompt = function(prompt: Instance, triggered: boolean, hold: boolean)
-        firesignal(prompt, hold and (triggered and "PromptButtonHoldBegan" or "PromptButtonHoldEnded") or (triggered and "Triggered" or triggered == false and "TriggerEnded" or "Triggered"))
-    end
-end)
-if not suc then warn("[ SALAD ]: fireproximityprompt failed: "..tostring(rec)) end 
-local suc, rec = pcall(function()
-    getgenv().setreadonly = function(t, readonly)
-        if not getmetatable(t) then
-            local proxy = {}
-            local mt = {
-                __index = t, 
-                __newindex = function(_, key, value)
-                    if readonly then
-                        error("Attempt to modify a readonly table", 2)
-                    else
-                        rawset(t, key, value) 
-                    end
-                end,
-                __pairs = function() return pairs(t) end, 
-                __ipairs = function() return ipairs(t) end,
-                __len = function() return #t end
-            }
-            setmetatable(proxy, mt)
-            return proxy 
-        else
-            local mt = getmetatable(t)
-            mt.__newindex = function(_, key, value)
-                if readonly then
-                    error("Attempt to modify a readonly table", 2)
-                else
-                    rawset(t, key, value)
-                end
-            end
-        end
-    end
-end)
-if not suc then warn("[ SALAD ]: setreadonly failed: " .. tostring(rec)) end
 
-local suc, rec = pcall(function()
-    getgenv().saveinstance = function() -- https://scriptblox.com/script/Universal-Script-Universal-Syn-Saveinstance-14624
-        local Params = {
-            RepoURL = "https://raw.githubusercontent.com/luau/SynSaveInstance/main/", 
-            SSI = "saveinstance",
-        }
-        local synsaveinstance = loadstring(game:HttpGet(Params.RepoURL .. Params.SSI .. ".luau", true), Params.SSI)()
-        local SaveOptions = {
-            ReadMe = true,
-            IsolatePlayers = true,
-            FilePath = string.format("%d", tick())
-        }
-        synsaveinstance(SaveOptions)
-    end
-end) 
-if not suc then warn("[ SALAD ]: saveinstance failed: " .. tostring(rec)) end
+    repeat task.wait() until val
+    return val
+end
 
--- Credits @w-a-e .
-local decompsrc = game:HttpGet("https://raw.githubusercontent.com/w-a-e/Advanced-Decompiler-V3/main/init.lua", true)
+getgenv().rconsolename = function(a)
+    if ConsoleClone then ConsoleClone.ConsoleFrame.Title.Text = a
+    else Console.ConsoleFrame.Title.Text = a end
+end
+
+getgenv().printconsole = function(msg, r, g, b)
+    rconsoleprint(msg, Color3.fromRGB(r or 0, g or 0, b or 0))
+end
+
+getgenv().rconsoleclear = function()
+    local targetConsole = ConsoleClone or Console
+    for _, v in pairs(targetConsole.ConsoleFrame.Holder:GetChildren()) do
+        if v:IsA('TextLabel') or v:IsA('TextBox') then v:Destroy() end
+    end
+end
+
+getgenv().rconsoleinfo = function(a) rconsoleprint('[INFO]: ' .. tostring(a)) end
+getgenv().rconsolewarn = function(a) rconsoleprint('[*]: ' .. tostring(a)) end
+getgenv().rconsoleerr = function(a)
+    local clr = MessageColor
+    local oldColor = next(function(v, k) if v == clr then return k end end, colors)
+    rconsoleprint(string.format('[@@RED@@*@@%s@@]: %s', oldColor, tostring(a)))
+end
+
+getgenv().rconsoleinputasync = rconsoleinput
+getgenv().consolecreate = rconsolecreate
+getgenv().consoleclear = rconsoleclear
+getgenv().consoledestroy = rconsoledestroy
+getgenv().consoleinput = rconsoleinput
+getgenv().rconsolesettitle = rconsolename
+getgenv().consolesettitle = rconsolename
+getgenv().consoleprint = rconsoleprint
+
+getgenv().hookfunction = function(func, hooked)
+    for i, v in pairs(getfenv()) do
+        if v == func then getfenv()[i] = hooked end
+    end
+end
+
+getgenv().replaceclosure = hookfunction
+
+local nilinstances = {}
+game.DescendantRemoving:Connect(function(d) table.insert(nilinstances, d) end)
+getgenv().getnilinstances = function() return nilinstances end
+
+local objs = {}
+local function trackobj(obj) table.insert(objs, obj) end
+
+function createobj(name)
+    local obj = {name = name}
+    trackobj(obj)
+    return obj
+end
+
+createobj("obj1")
+createobj("obj2")
+
+getgenv().getgc = function() return objs end
+
+getgenv().saveinstance = function() 
+	local Params = {
+		RepoURL = "https://raw.githubusercontent.com/luau/SynSaveInstance/main/",
+		SSI = "saveinstance",
+	}
+	local synsaveinstance = loadstring(game:HttpGet(Params.RepoURL .. Params.SSI .. ".luau", true), Params.SSI)()
+	local SaveOptions = {
+		ReadMe = true,
+		IsolatePlayers = true,
+		FilePath = string.format("%d", tick())
+	}
+	synsaveinstance(SaveOptions)
+end
+
+local decompsrc = game:HttpGet("https://raw.githubusercontent.com/w-a-e/Advanced-Decompiler-V3/main/init.lua", true) 
 local function loaddecomp(decomptimeout)
     local CONSTANTS = [[
-    local ENABLED_REMARKS = {
-    NATIVE_REMARK = true,
-    INLINE_REMARK = true
-    }
-    local DECOMPILER_TIMEOUT = ]] .. decomptimeout .. [[
-    
-    local READER_FLOAT_PRECISION = 99 
-    local SHOW_INSTRUCTION_LINES = false
-    local SHOW_REFERENCES = true
-    local SHOW_OPERATION_NAMES = false
-    local SHOW_MISC_OPERATIONS = true
-    local LIST_USED_GLOBALS = true
-    local RETURN_ELAPSED_TIME = false
-]]
+        local ENABLED_REMARKS = {
+            NATIVE_REMARK = true,
+            INLINE_REMARK = true
+        }
+        local DECOMPILER_TIMEOUT = ]] .. decomptimeout .. [[
+            
+        local READER_FLOAT_PRECISION = 99 -- up to 99
+        local SHOW_INSTRUCTION_LINES = false
+        local SHOW_REFERENCES = true
+        local SHOW_OPERATION_NAMES = false
+        local SHOW_MISC_OPERATIONS = true
+        local LIST_USED_GLOBALS = true
+        local RETURN_ELAPSED_TIME = false
+    ]]
     loadstring(string.gsub(decompsrc, ";;CONSTANTS HERE;;", CONSTANTS), "Advanced-Decompiler-V3")()
 end
 loaddecomp(10)
-
-getgenv().getnamecallmethod = nil -- fake func
-getgenv().getcustomasset = nil -- fake func 
-
--- moREnc because yes: https://scriptblox.com/script/Universal-Script-moREnc-16894 im the dev so no credits lmao, also like it fr
-
--- the test functions are ass lol, too lazy to fix :pray:
--- this was made for Wave btw but it can be used on other exploits too
-
-local addedfuncs = 0
-local totalfuncs = 0
 
 function check(funcName: string, func, testfunc)
     local success, err = pcall(function()
@@ -426,6 +450,3 @@ end)
 check("setrbxclipboard", function()
     getgenv().setrbxclipboard = setclipboard
 end)
-
-print(("Salad UNC for Nova loaded | Roblox version: "..version()))
-warn("[ IMPORTANT ]: Nova is an incognito paste, i do not reccomend using it as its very unstable and shit, instead go use something like celery or solara.")
