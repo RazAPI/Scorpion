@@ -25,8 +25,6 @@ log = logserv.MessageOut:Connect(function(msg)
     if msg:find("Current identity is") then identity = tonumber(msg:gsub('Current identity is', ''):match("%d+")) end 
 end)
 
-printidentity()
-
 getgenv().getthreadidentity = function()
     return identity 
 end
