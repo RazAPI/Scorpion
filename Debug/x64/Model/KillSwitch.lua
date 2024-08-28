@@ -3,4 +3,3 @@ game.Players.LocalPlayer:Kick("Slaze is currently down for maintenance! \n Sendi
   task.wait(3)
   game:Shutdown()
 end
-KillSwitch()
