@@ -1,5 +1,5 @@
 --[[
-  Thanks to Insaladarel on discord.  
+  Functions written by @insaladarel 
 ]]
 
 getgenv().checkcaller = function() return true end
