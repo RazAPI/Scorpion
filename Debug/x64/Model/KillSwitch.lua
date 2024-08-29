@@ -5,4 +5,4 @@ end
 function KillSwitchDisabled()
   KillSwitchActivated = false
 end
-KillSwitchActivated()
+KillSwitchDisabled()
