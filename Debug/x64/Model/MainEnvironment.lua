@@ -17,7 +17,7 @@ getgenv().cache = {
 local function check(func, ...) return pcall(func, ...) end
 
 function identifyexecutor()
- return "Slaze","3.197.40"
+ return "Slaze","3.211.47"
 end
 
 
