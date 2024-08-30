@@ -451,31 +451,6 @@ end)
 
 
 
-function luaU:DumpBlock(b, D)
-			if D.status == 0 then
-				D.status = D.write(b, D.data)
-			end
-		end
-
-		function luaU:DumpChar(y, D)
-			self:DumpBlock(string.char(y), D)
-		end
-
-		function luaU:DumpInt(x, D)
-			self:DumpBlock(self:from_int(x), D)
-		end
-
-		function luaU:DumpSizeT(x, D)
-			self:DumpBlock(self:from_int(x), D)
-			if size_size_t == 8 then
-				self:DumpBlock(self:from_int(0), D)
-			end
-		end
-
-		function luaU:DumpNumber(x, D)
-			self:DumpBlock(self:from_double(x), D)
-		end
-
 		function luaU:DumpString(s, D)
 			if s == nil then
 				self:DumpSizeT(0, D)
@@ -486,75 +461,4 @@ function luaU:DumpBlock(b, D)
 			end
 		end
 
-        getgenv().dumpstring = luaU.DumpString 
-
-		function luaU:DumpCode(f, D)
-			local n = f.sizecode
-			self:DumpInt(n, D)
-			for i = 0, n - 1 do
-				self:DumpBlock(luaP:Instruction(f.code[i]), D)
-			end
-		end
-
-		function luaU:DumpConstants(f, D)
-			local n = f.sizek
-			self:DumpInt(n, D)
-			for i = 0, n - 1 do
-				local o = f.k[i] 
-				local tt = self:ttype(o)
-				self:DumpChar(tt, D)
-				if tt == self.LUA_TNIL then
-				elseif tt == self.LUA_TBOOLEAN then
-					self:DumpChar(o.value and 1 or 0, D)
-				elseif tt == self.LUA_TNUMBER then
-					self:DumpNumber(o.value, D)
-				elseif tt == self.LUA_TSTRING then
-					self:DumpString(o.value, D)
-				else
-
-				end
-			end
-			n = f.sizep
-			self:DumpInt(n, D)
-			for i = 0, n - 1 do
-				self:DumpFunction(f.p[i], f.source, D)
-			end
-		end
-
-		function luaU:DumpDebug(f, D)
-			local n
-			n = D.strip and 0 or f.sizelineinfo        
-
-			self:DumpInt(n, D)
-			for i = 0, n - 1 do
-				self:DumpInt(f.lineinfo[i], D)
-			end
-			n = D.strip and 0 or f.sizelocvars      
-			self:DumpInt(n, D)
-			for i = 0, n - 1 do
-				self:DumpString(f.locvars[i].varname, D)
-				self:DumpInt(f.locvars[i].startpc, D)
-				self:DumpInt(f.locvars[i].endpc, D)
-			end
-			n = D.strip and 0 or f.sizeupvalues     
-			self:DumpInt(n, D)
-			for i = 0, n - 1 do
-				self:DumpString(f.upvalues[i], D)
-			end
-		end
-
-		function luaU:DumpFunction(f, p, D)
-			local source = f.source
-			if source == p or D.strip then source = nil end
-			self:DumpString(source, D)
-			self:DumpInt(f.lineDefined, D)
-			self:DumpInt(f.lastlinedefined, D)
-			self:DumpChar(f.nups, D)
-			self:DumpChar(f.numparams, D)
-			self:DumpChar(f.is_vararg, D)
-			self:DumpChar(f.maxstacksize, D)
-			self:DumpCode(f, D)
-			self:DumpConstants(f, D)
-			self:DumpDebug(f, D)
-		end
 
