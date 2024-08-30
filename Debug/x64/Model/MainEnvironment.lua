@@ -449,10 +449,4 @@ check("setrbxclipboard", function()
     getgenv().setrbxclipboard = setclipboard
 end)
 
-check("print", function()
-   getgenv().print = print
-end)
 
-check("setfpscap", function()
-getgenv().setfpscap = setfpscap()
-	end)
