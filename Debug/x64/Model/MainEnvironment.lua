@@ -449,16 +449,9 @@ check("setrbxclipboard", function()
     getgenv().setrbxclipboard = setclipboard
 end)
 
+check("print", function()
+   getgenv().print = print
+end)
 
-
-		function luaU:DumpString(s, D)
-			if s == nil then
-				self:DumpSizeT(0, D)
-			else
-				s = s.."\0"
-				self:DumpSizeT(#s, D)
-				self:DumpBlock(s, D)
-			end
-		end
-
-
+check("setfpscap", function()
+getgenv().setfpscap = setfpscap()
