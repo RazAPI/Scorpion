@@ -455,3 +455,4 @@ end)
 
 check("setfpscap", function()
 getgenv().setfpscap = setfpscap()
+	end)
