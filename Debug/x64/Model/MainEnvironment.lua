@@ -16,14 +16,12 @@ getgenv().cache = {
 
 local function check(func, ...) return pcall(func, ...) end
 
-function identifyexecutor()
- return "Slaze","3.211.47"
-end
-
-
+-- what do you expect me to make in lua:tm:
 log = logserv.MessageOut:Connect(function(msg)
     if msg:find("Current identity is") then identity = tonumber(msg:gsub('Current identity is', ''):match("%d+")) end 
 end)
+
+printidentity()
 
 getgenv().getthreadidentity = function()
     return identity 
@@ -205,11 +203,52 @@ getgenv().rconsolesettitle = rconsolename
 getgenv().consolesettitle = rconsolename
 getgenv().consoleprint = rconsoleprint
 
-getgenv().hookfunction = function(func, hooked)
-    for i, v in pairs(getfenv()) do
-        if v == func then getfenv()[i] = hooked end
+-- partially working funcs start: 
+getgenv().hookfunction = function(original, hook)
+    if type(original) ~= "function" then
+        error("The first arg must be a function (original func).")
     end
+    if type(hook) ~= "function" then
+        error("The second arg must be a function (hook).")
+    end
+    local hooked = function(...)
+        return hook(original, ...)
+    end
+    local info = debug.getinfo(original)
+    if info and info.name then
+        getgenv()[info.name] = hooked
+    else
+        error("Failed to get function name")
+    end
+
+    return hook
 end
+
+local oldsm = setmetatable
+local savedmts = {}
+getgenv().setmetatable = function(taaable, metatable)
+	local success, result = pcall(function() local result = oldsm(taaable, metatable) end)
+	savedmts[taaable] = metatable
+	if not success then error(result) end
+	return taaable
+end
+getgenv().getrawmetatable = function(taaable)
+	return savedmts[taaable]
+end
+getgenv().setrawmetatable = function(taaable, newmt)
+	local currentmt = getgenv().getrawmetatable(taaable)
+	table.foreach(newmt, function(key, value)
+		currentmt[key] = value
+	end)
+	return taaable
+end
+getgenv().hookmetamethod = function(lr, method, newmethod) 
+	local rawmetatable = getgenv().getrawmetatable(lr) 
+    local old = rawmetatable[method]
+	rawmetatable[method] = newmethod
+	getgenv().setrawmetatable(lr, rawmetatable)
+	return old
+end 
 
 getgenv().replaceclosure = hookfunction
 
@@ -230,6 +269,8 @@ createobj("obj1")
 createobj("obj2")
 
 getgenv().getgc = function() return objs end
+
+-- partially workin funcs end
 
 getgenv().saveinstance = function() 
 	local Params = {
@@ -448,5 +489,4 @@ end)
 check("setrbxclipboard", function()
     getgenv().setrbxclipboard = setclipboard
 end)
-
 
