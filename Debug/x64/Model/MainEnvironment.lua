@@ -1,5 +1,5 @@
 --[[
-  Functions written by @insaladarel 
+Thank you insaladarel on discord for the fucntions, More credits to vxstyy for some of the rconsole functions.    
 ]]
 
 getgenv().checkcaller = function() return true end
@@ -16,7 +16,7 @@ getgenv().cache = {
 
 local function check(func, ...) return pcall(func, ...) end
 
-
+-- what do you expect me to make in lua:tm:
 log = logserv.MessageOut:Connect(function(msg)
     if msg:find("Current identity is") then identity = tonumber(msg:gsub('Current identity is', ''):match("%d+")) end 
 end)
@@ -27,13 +27,11 @@ getgenv().getthreadidentity = function()
 end
 
 getgenv().printidentity = function()
-    print("Current identity is "..getthreadidentity() 
-end 
-
-getgenv().identifyexecutor = function()
- return "Slaze", "3.276.61"
+    print("Current identity is "..getthreadidentity()) 
 end
 
+getgenv().identifyexecutor = function()
+  return "Slaze", "3.376.61"
 
 getgenv().getidentity = getthreadidentity
 getgenv().getthreadcontext = getthreadidentity
@@ -174,35 +172,6 @@ getgenv().rconsoleinput = function()
     return val
 end
 
-	
-funcs.syn.protect_gui = function(gui)
- names[gui] = {name=gui.Name,parent=gui.Parent}
- protecteduis[gui] = gui
- gui.Name = funcs.crypt.random(64) -- 64 byte string, removed hashing cuz its useless lmao
- gui.Parent = gethui()
-end
-funcs.syn.unprotect_gui = function(gui)
- if names[gui] then gui.Name = names[gui].name gui.Parent = names[gui].parent end protecteduis[gui] = nil
-end
-funcs.syn.protectgui = funcs.syn.protect_gui
-funcs.syn.unprotectgui = funcs.syn.unprotect_gui
-funcs.syn.secure_call = function(func) -- Does not do a secure call, just pcalls it.
- return pcall(func)
-end
-
-
-funcs.isreadonly = function(tbl)
- if type(tbl) ~= 'table' then return false end
- return table.isfrozen(tbl)
-end
-funcs.setreadonly = function(tbl, cond)
- if cond then
-  table.freeze(tbl)
- else
-  return funcs.deepclone(tbl)
- end
-end
-
 getgenv().rconsolename = function(a)
     if ConsoleClone then ConsoleClone.ConsoleFrame.Title.Text = a
     else Console.ConsoleFrame.Title.Text = a end
@@ -239,7 +208,7 @@ getgenv().consoleprint = rconsoleprint
 -- partially working funcs start: 
 getgenv().hookfunction = function(original, hook)
     if type(original) ~= "function" then
-        error("The first arg must be a function (original function).")
+        error("The first arg must be a function (original func).")
     end
     if type(hook) ~= "function" then
         error("The second arg must be a function (hook).")
@@ -301,13 +270,15 @@ end
 createobj("obj1")
 createobj("obj2")
 
-getgenv().getgc = function() return objs end
+getgenv().getgc = function()
+ return objs
+ end
 
 -- partially workin funcs end
 
 getgenv().saveinstance = function() 
 	local Params = {
-		RepoURL = "raw.githubusercontent.com/luau/UniversalSynSaveInstance/main/saveinstance.luau",
+		RepoURL = "https://raw.githubusercontent.com/luau/SynSaveInstance/main/",
 		SSI = "saveinstance",
 	}
 	local synsaveinstance = loadstring(game:HttpGet(Params.RepoURL .. Params.SSI .. ".luau", true), Params.SSI)()
@@ -521,8 +492,4 @@ end)
 
 check("setrbxclipboard", function()
     getgenv().setrbxclipboard = setclipboard
-end)
-
-check("hookfunction", function()
-		getgenv().hookfunction = hookfunction
 end)
