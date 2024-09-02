@@ -21,7 +21,6 @@ log = logserv.MessageOut:Connect(function(msg)
     if msg:find("Current identity is") then identity = tonumber(msg:gsub('Current identity is', ''):match("%d+")) end 
 end)
 
-printidentity()
 
 getgenv().getthreadidentity = function()
     return identity 
@@ -206,7 +205,7 @@ getgenv().consoleprint = rconsoleprint
 -- partially working funcs start: 
 getgenv().hookfunction = function(original, hook)
     if type(original) ~= "function" then
-        error("The first arg must be a function (original func).")
+        error("The first arg must be a function (original function).")
     end
     if type(hook) ~= "function" then
         error("The second arg must be a function (hook).")
@@ -490,3 +489,6 @@ check("setrbxclipboard", function()
     getgenv().setrbxclipboard = setclipboard
 end)
 
+check("hookfunction", function()
+		getgenv().hookfunction = hookfunction
+end)
