@@ -129,7 +129,7 @@ task.wait(0.4)
 animateStatus("Launching bootstrapper", 2, 0.2)
 task.wait(2)
 game.CoreGui.AutoUpdater:Destroy()
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RazAPI/SlazeV3/main/Debug/x64/Model/Bootstrapper/SlazeBootstrapper.lua"))()
 end)
 if success then
  end
