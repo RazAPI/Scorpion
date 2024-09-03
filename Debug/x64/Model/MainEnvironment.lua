@@ -32,6 +32,7 @@ end
 
 getgenv().identifyexecutor = function()
   return "Slaze", "3.376.61"
+end
 
 getgenv().getidentity = getthreadidentity
 getgenv().getthreadcontext = getthreadidentity
