@@ -128,9 +128,10 @@ animateStatus("Checking bootstrapper version \n \n 3 Endpoint(s) made out of 4",
 task.wait(0.6)
 animateStatus("Downloading dependencies \n \n 4 Endpoint(s) made out of 4", 2, 0.2)
 task.wait(0.4)
-animateStatus("Launching bootstrapper", 2, 0.2)
-task.wait(2)
+animateStatus("Launching bootstrapper \n Version 1.0.7.1", 2, 0.2)
+task.wait(1)
 game.CoreGui.AutoUpdater:Destroy()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RazAPI/SlazeV3/main/Debug/x64/Model/Bootstrapper/SlazeBootstrapper.lua"))()
 end)
 if success then
  end
