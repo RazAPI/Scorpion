@@ -1,5 +1,6 @@
 --[[
-Thank you insaladarel on discord for the fucntions, More credits to vxstyy for some of the rconsole functions.    
+Thank you insaladarel on discord for the fucntions, More credits to vxstyy for some of the rconsole functions. 
+More features are also available at Advanced-Decompiler-V3, Fixed some issues.
 ]]
 
 getgenv().checkcaller = function() return true end
@@ -291,7 +292,7 @@ getgenv().saveinstance = function()
 	synsaveinstance(SaveOptions)
 end
 
-local decompsrc = game:HttpGet("https://raw.githubusercontent.com/w-a-e/Advanced-Decompiler-V3/main/init.lua", true) 
+local decompsrc = game:HttpGet("https://raw.githubusercontent.com/RazAPI/SlazeV3/main/Debug/x64/InitScript.lua", true) 
 local function loaddecomp(decomptimeout)
     local CONSTANTS = [[
         local ENABLED_REMARKS = {
@@ -308,7 +309,7 @@ local function loaddecomp(decomptimeout)
         local LIST_USED_GLOBALS = true
         local RETURN_ELAPSED_TIME = false
     ]]
-    loadstring(string.gsub(decompsrc, ";;CONSTANTS HERE;;", CONSTANTS), "Advanced-Decompiler-V3")()
+    loadstring(string.gsub(decompsrc, "-- CONSTANTS HERE --", CONSTANTS), "Advanced-Decompiler-V3")()
 end
 loaddecomp(10)
 
