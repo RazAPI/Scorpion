@@ -22,9 +22,11 @@ function getcallingscript()
  local s = debug.info(1, 's')
  for i, v in next, game:GetDescendants() do
   if v:GetFullName() == s then return v end
- end
+ end	
  return nil
 end
+
+
 function dbg.getinfo(thread)
  local CurrentLine = tonumber(debug.info(thread, 'l'))
  local Source = debug.info(thread, 's')
@@ -41,7 +43,7 @@ function dbg.getinfo(thread)
   ['short_src'] = tostring(Source:sub(1, 60))
   }
 end
-return dbg
+return dbg -- Vxstyy for these basic functions
 
 
 log = logserv.MessageOut:Connect(function(msg)
