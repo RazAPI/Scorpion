@@ -291,7 +291,7 @@ getgenv().saveinstance = function()
 	synsaveinstance(SaveOptions)
 end
 
-local decompsrc = game:HttpGet("https://raw.githubusercontent.com/RazAPI/SlazeV3/main/Debug/x64/InitScript.lua", true) 
+local decompsrc = game:HttpGet("https://raw.githubusercontent.com/RazAPI/Slaze/main/Debug/x64/Init/InitScript.lua", true) 
 local function loaddecomp(decomptimeout)
     local CONSTANTS = [[
         local ENABLED_REMARKS = {
