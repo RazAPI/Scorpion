@@ -1,3 +1,5 @@
+local funcs = {}
+
 funcs.syn.protect_gui = function(gui)
  names[gui] = {name=gui.Name,parent=gui.Parent}
  protecteduis[gui] = gui
