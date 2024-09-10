@@ -9,3 +9,13 @@ getgenv().getsenv = function(Scr)
         end
     end
 end
+
+getgenv().getsenv = function(instance)
+    for _, v in next, getreg() do
+        if type(v) == "function" then
+            if getfenv(v).script == instance then
+                return getfenv(v)
+            end
+        end
+    end
+end
