@@ -1,6 +1,5 @@
--- xAPI		- A Powerful Exploit Simulator
--- Version	- build::896581584
--- Author	- Eskue (@SQLanguage)
+-- All credits go to xAPI for these! -- Goes well with Slaze's init.
+
 
 -- Locals
 local xAPI = {}
