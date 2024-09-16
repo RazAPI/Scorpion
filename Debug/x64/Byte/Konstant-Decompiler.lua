@@ -1,3 +1,5 @@
+assert(getscriptbytecode, "Exploit not supported.")
+
 local API: string = "http://api.plusgiant5.com"
 
 local last_call = 0
