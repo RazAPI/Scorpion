@@ -1,4 +1,5 @@
-https://cdn.discordapp.com/icons/1275949456977694761/1d6e8efb32709926ef0eb013f32fe759.png?size=4096
+
+![1d6e8efb32709926ef0eb013f32fe759](https://github.com/user-attachments/assets/a3542c19-23ec-4aa1-aff5-59bcc17dc065)
 
 # Introducing: 💫 Scorpion, an internal built inside of executors to increase your scripting experience with More UNC embedded. (No, it's not the script that you're thinking of on scriptblox.)
 
@@ -28,8 +29,11 @@ Read this: This internal is only perfect for Solara, and other environments for 
 
 This was just made for fun, and i expect nothing from it since all i want is just for it to act like a normal lua-built internal.
 
+UNC Test:
 
 ![image](https://github.com/user-attachments/assets/e1b0c9b8-c889-49a6-8c1f-02319ddca7f4)
+
+Preview:
 
 ![image](https://github.com/user-attachments/assets/94e69d65-2a97-4da6-8022-bb03d587a3a6)
 
