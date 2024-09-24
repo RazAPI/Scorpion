@@ -1,19 +1,35 @@
-![5a119b051dbe97065a11f12b6fc87acc](https://github.com/user-attachments/assets/c9ceff50-e8ff-4e62-b6d2-d3ac4240b67b)
+https://cdn.discordapp.com/icons/1275949456977694761/1d6e8efb32709926ef0eb013f32fe759.png?size=4096
 
-# Slaze is a new & upcoming script hub on the market to becoming the best and carrying all your needed scripts in one whole package.
+# Introducing: 💫 Scorpion, an internal built inside of executors to increase your scripting experience with More UNC embedded. (No, it's not the script that you're thinking of on scriptblox.)
 
-Slaze has features within it's powerful execution technique:
+***Scorpion includes features like:***
 
--- 8+ Universal Scripts 📜
+*⚙️ A built-in Lua Bytecode Interpeter, going by Fiu. ⚙️*
 
--- A keysystem is not needed! 🔐
+*🎮 With 81%-80% UNC, you can experience the best and stablest execution experience in the history of Roblox Exploiting. 🎮*
 
--- Player Class scripts like Camera Noclip, Day & Night toggle, and other more. 👻
 
--- Exploit Class scripts which carry MoreUNC, UNCTest, and exploit UI's. 💻
+*💉 Within the UNC part, Scorpion includes over 83% RENC apart from our powerful functions guided. 💉*
 
--- A universal script executor ⭐
+*💰 Scorpion includes some parts of Init scripts, which were made by insaladarel on discord. 💰*
 
--- Other scripts including game hubs, Admin scripts, and more! 💡
+*⚠️ With the always-updated Decompiler, using plusgiant5's Konstant Decompiler, it comes to enhance your experiencing on decompiling scripts in Dex. ⚠️*
 
-# Slaze modifies the roblox client and is looking forward to enhance your experience with Roblox Exploiting.
+
+*📑 UI Animations: Animations included like pressing on the X button, all UI elements will fade away, Hovering over buttons which will make them have a increased size, or position in the front. 📑*
+
+
+
+
+
+Think this out: sUNC does not really like Lua-Built functions, meaning we obviously don't have alot on our plate.
+
+Read this: This internal is only perfect for Solara, and other environments for other executors will be detected eitherway, Wait for another update.
+
+This was just made for fun, and i expect nothing from it since all i want is just for it to act like a normal lua-built internal.
+
+
+![image](https://github.com/user-attachments/assets/e1b0c9b8-c889-49a6-8c1f-02319ddca7f4)
+
+![image](https://github.com/user-attachments/assets/94e69d65-2a97-4da6-8022-bb03d587a3a6)
+
