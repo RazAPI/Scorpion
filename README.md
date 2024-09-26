@@ -5,6 +5,9 @@
 
 ***Scorpion includes features like:***
 
+
+![Info](https://img.shields.io/badge/Info-This%20is%20an%20information%20message-blue)
+
 *⚙️ A built-in Lua Bytecode Interpeter, going by Fiu. ⚙️*
 
 *🎮 With 83%-82% UNC, you can experience the best and stablest execution experience in the history of Roblox Exploiting. 🎮*
