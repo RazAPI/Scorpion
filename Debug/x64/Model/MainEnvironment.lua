@@ -26,13 +26,6 @@ getgenv().getthreadidentity = function()
     return identity 
 end
 
-getgenv().printidentity = function()
-    print("Current identity is "..getthreadidentity()) 
-end
-
-getgenv().identifyexecutor = function()
-  return "Slaze", "3.376.61"
-end
 
 getgenv().getidentity = getthreadidentity
 getgenv().getthreadcontext = getthreadidentity
