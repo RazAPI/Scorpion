@@ -12,7 +12,7 @@ If you are hereby viewing the source, you are not allowed to take any permissabl
 
 *⚙️ A built-in Lua Bytecode Interpeter, going by Fiu. ⚙️*
 
-*🎮 With 83%-82% UNC, you can experience the best and stablest execution experience in the history of Roblox Exploiting. 🎮*
+*🎮 With 84%-83% UNC, you can experience the best and stablest execution experience in the history of Roblox Exploiting. 🎮*
 
 
 *💉 Within the UNC part, Scorpion includes over 86% RENC apart from our powerful functions guided. 💉*
