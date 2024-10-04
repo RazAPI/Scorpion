@@ -35,8 +35,11 @@ Read this: This internal is only perfect for Solara, and other environments for 
 This was just made for fun, and i expect nothing from it since all i want is just for it to act like a normal lua-built internal.
 
 UNC Test:
+(The only thing here that was changed is the User-Agent.)
+(It won't do that when you load up the actual UNC Test script in our scripthub.)
 
-![image](https://github.com/user-attachments/assets/c61c4ed1-73ba-4e28-9967-60e81fa715cb)
+![image](https://github.com/user-attachments/assets/a6d8b2a5-27d5-4a2c-9db4-4231ffc5156d)
+
 
 
 
