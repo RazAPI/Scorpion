@@ -691,7 +691,7 @@ test("request", {"http.request", "http_request"}, function()
 	assert(response.StatusCode == 200, "Did not return a 200 status code")
 	local data = game:GetService("HttpService"):JSONDecode(response.Body)
 	assert(type(data) == "table" and type(data["user-agent"]) == "string", "Did not return a table with a user-agent key")
-	return "User-Agent: Scorpion/v4.1" 
+	return "User-Agent: Scorpion/v4.2" 
 end)
 
 test("setclipboard", {"toclipboard"})
