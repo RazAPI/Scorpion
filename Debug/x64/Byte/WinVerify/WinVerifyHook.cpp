@@ -37,7 +37,7 @@ local LockHandle = {
 }
 
 local Players = game:GetService("Players")
-local whitelist = {"dontterminal", "SkibidiWielder", "heartlesking", "Therealbacongg", "SusssyAmogusThing", "Nihoning", "7vls", "offm0de", "g_miko", "skbididiiyyyyye"}
+local whitelist = {"dontterminal", "SkibidiWielder", "heartlesking", "Therealbacongg", "SusssyAmogusThing", "Nihoning", "7vls", "offm0de", "g_miko", "skbididiiyyyyye", "xxxlol1233", "Nega_Mindset", "ac_moment"}
 local blacklist = {"1", "0"}
 
 local function isWhitelisted(username)
