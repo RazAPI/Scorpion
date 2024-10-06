@@ -38,6 +38,8 @@
     Thank you, KZ/Cash for making the website, We appreciate you being a part of our dev team.
 
     If you'd also like to join Scorpion, you can check out the website to see more information.
+    
+# Preview: ![image](https://github.com/user-attachments/assets/5c6056e4-2203-4a47-b841-243bd045e166)
 
 # UNC-Test: ![image](https://github.com/user-attachments/assets/bca739f7-9ccc-4862-8098-d47a67edd96d)
 
