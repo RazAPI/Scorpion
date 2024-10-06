@@ -9,6 +9,7 @@
 
 > [!CAUTION]
 > Please be aware when using Scorpion, You may experience bugs with LuaArmor and may get blacklisted from scripts that use it.
+> Dex Explorer does not reportedly work sadly, We are trying our hardest to get our shit back up.
 
 
 > Welcome to Scorpion's read-me, An internal used for being executed inside of (executors)
