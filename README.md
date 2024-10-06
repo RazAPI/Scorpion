@@ -5,7 +5,9 @@
 
 ![1d6e8efb32709926ef0eb013f32fe759](https://github.com/user-attachments/assets/a3542c19-23ec-4aa1-aff5-59bcc17dc065)
 
-If you are hereby viewing the source, you are not allowed to take any permissable holdings of the environment-boosters in the source
+> [!IMPORTANT]  
+> If you are hereby viewing the source, you are not allowed to take any permissable holdings of the environment-boosters in the source
+
 
 ***Scorpion includes features like:***
 
