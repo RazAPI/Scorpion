@@ -3,6 +3,10 @@ Thank you insaladarel on discord for the fucntions, More credits to vxstyy for s
 More features are also available at Advanced-Decompiler-V3, Fixed some issues.
 ]]
 
+-- Wondering what this is? This is a yet (unstable) usable-environment to stop people from making getgenv useless.
+-- This is just Scorpion's init. aka from https://github.com/RazAPI/Scorpion/edit/main/Debug/x64/Model/MainEnvironment.lua
+-- Without the getgenv placements, since they're vulnerable.
+
 checkcaller = function() return true end
 local logserv = game:GetService("LogService")
 local cached, ConsoleClone, identity, log = {}, nil, nil, nil
