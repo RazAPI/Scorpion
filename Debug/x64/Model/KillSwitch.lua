@@ -1,5 +1,5 @@
 function KillSwitchActivated()
-game.Players.LocalPlayer:Kick("Slaze's services are currently down for maintenance.")
+game.Players.LocalPlayer:Kick("Scorpion's services are currently down for maintenance.")
   KillSwitchDisabled = false
 end
 function KillSwitchDisabled()
