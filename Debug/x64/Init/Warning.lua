@@ -1,5 +1,6 @@
 local latestVersion = "4.5"
 local outdatedVersion = "4.4"
+local localVersion = "4.5"
 
 if localVersion == outdatedVersion then
     -- Credits to 1 F0, even though I was never intended/supposedly allowed to use this.
