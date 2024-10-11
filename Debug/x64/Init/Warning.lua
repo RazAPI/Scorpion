@@ -1,8 +1,5 @@
-local latestVersion = "4.5"
-local outdatedVersion = "4.4"
-local localVersion = "4.5"
+if (localVersion = "4.4") then
 
-if localVersion == outdatedVersion then
     -- Credits to 1 F0, even though I was never intended/supposedly allowed to use this.
     -- Locally just adding a new one now.
     local GKD = Instance.new("ScreenGui")
@@ -71,4 +68,6 @@ if localVersion == outdatedVersion then
     UICorner.CornerRadius = UDim.new(0, 4)
     UICorner.Parent = CopyWebsiteURL
     task.wait(1000000000)
+else
+task.wait(0.1) -- nothing
 end
