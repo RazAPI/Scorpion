@@ -60,7 +60,10 @@ local GKD = Instance.new("ScreenGui")
 
     UICorner.CornerRadius = UDim.new(0, 4)
     UICorner.Parent = CopyWebsiteURL
-
+    BlurEffect:Destroy()
+    ImageLabel:Destroy()
+    fr:Destroy()
+    ScreenGui:Destroy()
 
   KillSwitchDisabled = false
 end
