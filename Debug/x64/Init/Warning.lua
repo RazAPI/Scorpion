@@ -1,5 +1,8 @@
-if (localVersion = "4.4") then
 
+    local latestVersion = "4.5"
+    local tweenService = game:GetService("TweenService")
+
+if (localVersion == "4.4") then
     -- Credits to 1 F0, even though I was never intended/supposedly allowed to use this.
     -- Locally just adding a new one now.
     local GKD = Instance.new("ScreenGui")
@@ -35,16 +38,32 @@ if (localVersion = "4.4") then
     TextNotif.Size = UDim2.new(0, 400, 0, 200)
     TextNotif.ZIndex = 101
     TextNotif.Font = Enum.Font.Gotham
-    TextNotif.Text = "Hi, This version of Scorpion is outdated, and we recommend you switch to the newest version.\n\n - Newest Version: " 
+    TextNotif.Text = "!! IMPORTANT ALERT !!\n\n This version of Scorpion is outdated, and we recommend you switch to the newest version.\n\n - Newest Version: " 
         .. latestVersion 
         .. "\n - Current Version: " 
-        .. outdatedVersion 
-        .. "\n\n - RazAPI/Founder of Scorpion LLC.\n"
+        .. localVersion 
+        .. "\n\n - Offical Scorpion Team\n"
 
     TextNotif.TextColor3 = Color3.fromRGB(255, 255, 255)
     TextNotif.TextScaled = true
-    TextNotif.TextSize = 15.000
+    TextNotif.TextSize = 25
     TextNotif.TextWrapped = true
+
+    CopyWebsiteURL.MouseEnter:Connect(function()
+    local fadeTweenInfo2 = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    local Sigt = tweenService:Create(CopyWebsiteURL, fadeTweenInfo2, {Size = UDim2.new(0, 345, 0, 45)})
+    CopyWebsiteURL.Text = "Copy Discord Link?"
+    Sigt:Play()
+end)
+
+    CopyWebsiteURL.MouseLeave:Connect(function()
+    local fadeTweenInfo2 = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    local Sigtt = tweenService:Create(CopyWebsiteURL, fadeTweenInfo2, {Size = UDim2.new(0, 342, 0, 40)})
+    CopyWebsiteURL.Text = "Copy Discord Link"
+    Sigtt:Play()
+end)
+
+
 
     CopyWebsiteURL.Name = "CopyWebsiteURL"
     CopyWebsiteURL.Parent = ForceUpdatingBanner
@@ -58,7 +77,7 @@ if (localVersion = "4.4") then
     CopyWebsiteURL.Font = Enum.Font.GothamBold
     CopyWebsiteURL.Text = "Copy Discord Link"
     CopyWebsiteURL.TextColor3 = Color3.fromRGB(90, 79, 207)
-    CopyWebsiteURL.TextSize = 16.000
+    CopyWebsiteURL.TextSize = 22.000
 
     CopyWebsiteURL.MouseButton1Click:Connect(function()
         setclipboard("https://discord.gg/ppkGE773")
@@ -71,3 +90,4 @@ if (localVersion = "4.4") then
 else
 task.wait(0.1) -- nothing
 end
+
