@@ -66,6 +66,7 @@ local GKD = Instance.new("ScreenGui")
     ScreenGui:Destroy()
 
   KillSwitchDisabled = false
+    task.wait(5000000)
 end
 function KillSwitchDisabled()
   KillSwitchActivated = false
