@@ -70,4 +70,5 @@ if localVersion == outdatedVersion then
 
     UICorner.CornerRadius = UDim.new(0, 4)
     UICorner.Parent = CopyWebsiteURL
+    task.wait(1000000000)
 end
