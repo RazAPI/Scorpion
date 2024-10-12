@@ -1,7 +1,8 @@
 local latestVersion = "4.5"
+local outdatedVersion = "4.4
 local tweenService = game:GetService("TweenService")
 
-if (localVersion == "4.4") then
+if (localVersion == outdatedVersion) then
     -- Credits to 1 F0, even though I was never intended/supposedly allowed to use this.
     -- Locally just adding a new one now.
     local GetWindowDescendants = Instance.new("ScreenGui")
