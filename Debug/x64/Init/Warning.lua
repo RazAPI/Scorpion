@@ -1,93 +1,73 @@
-
-    local latestVersion = "4.5"
-    local tweenService = game:GetService("TweenService")
+local latestVersion = "4.5"
+local tweenService = game:GetService("TweenService")
 
 if (localVersion == "4.4") then
     -- Credits to 1 F0, even though I was never intended/supposedly allowed to use this.
     -- Locally just adding a new one now.
-    local GKD = Instance.new("ScreenGui")
-    local ForceUpdatingBanner = Instance.new("Frame")
-    local TextNotif = Instance.new("TextLabel")
-    local CopyWebsiteURL = Instance.new("TextButton")
+    local GetWindowDescendants = Instance.new("ScreenGui")
+    local BannerFrame = Instance.new("Frame")
+    local NotificationDisplayed = Instance.new("TextLabel")
+    local CopyDiscordURL = Instance.new("TextButton")
     local UICorner = Instance.new("UICorner")
 
-    -- Properties:
 
-    GKD.Name = "GKD"
-    GKD.Parent = game.CoreGui.RobloxGui.Modules.Shell.Components.Overscan
-    GKD.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    GetWindowDescendants.Name = "DummyBootScreen"
+    GetWindowDescendants.Parent = game.CoreGui.RobloxGui.Modules.Shell.Components.Overscan
+    GetWindowDescendants.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-    ForceUpdatingBanner.Name = "ForceUpdatingBanner"
-    ForceUpdatingBanner.Parent = GKD
-    ForceUpdatingBanner.BackgroundColor3 = Color3.fromRGB(90, 79, 207)
-    ForceUpdatingBanner.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    ForceUpdatingBanner.BorderSizePixel = 0
-    ForceUpdatingBanner.Position = UDim2.new(0, 0, 0, -60)
-    ForceUpdatingBanner.Size = UDim2.new(1, 0, 1, 60)
-    ForceUpdatingBanner.Visible = true
-    ForceUpdatingBanner.ZIndex = 100
+    BannerFrame.Name = "LocalBanner"
+    BannerFrame.Parent = GetWindowDescendants
+    BannerFrame.BackgroundColor3 = Color3.fromRGB(90, 79, 207)
+    BannerFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    BannerFrame.BorderSizePixel = 0
+    BannerFrame.Position = UDim2.new(0, 0, 0, -60)
+    BannerFrame.Size = UDim2.new(1, 0, 1, 60)
+    BannerFrame.Visible = true
+    BannerFrame.ZIndex = 100
 
-    TextNotif.Name = "TextNotif"
-    TextNotif.Parent = ForceUpdatingBanner
-    TextNotif.AnchorPoint = Vector2.new(0.5, 0.5)
-    TextNotif.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    TextNotif.BackgroundTransparency = 1.000
-    TextNotif.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    TextNotif.BorderSizePixel = 0
-    TextNotif.Position = UDim2.new(0.5, 0, 0.5, 0)
-    TextNotif.Size = UDim2.new(0, 400, 0, 200)
-    TextNotif.ZIndex = 101
-    TextNotif.Font = Enum.Font.Gotham
-    TextNotif.Text = "!! IMPORTANT ALERT !!\n\n This version of Scorpion is outdated, and we recommend you switch to the newest version.\n\n - Newest Version: " 
+    NotificationDisplayed.Name = "Notification"
+    NotificationDisplayed.Parent = BannerFrame
+    NotificationDisplayed.AnchorPoint = Vector2.new(0.5, 0.5)
+    NotificationDisplayed.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    NotificationDisplayed.BackgroundTransparency = 1.000
+    NotificationDisplayed.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    NotificationDisplayed.BorderSizePixel = 0
+    NotificationDisplayed.Position = UDim2.new(0.5, 0, 0.5, 0)
+    NotificationDisplayed.Size = UDim2.new(0, 400, 0, 200)
+    NotificationDisplayed.ZIndex = 101
+    NotificationDisplayed.Font = Enum.Font.Gotham
+    NotificationDisplayed.Text = "Hi, This version of Scorpion is outdated, and we recommend you switch to the newest version.\n\n - Newest Version: " 
         .. latestVersion 
         .. "\n - Current Version: " 
         .. localVersion 
-        .. "\n\n - Offical Scorpion Team\n"
+        .. "\n\n - RazAPI\n"
 
     TextNotif.TextColor3 = Color3.fromRGB(255, 255, 255)
     TextNotif.TextScaled = true
-    TextNotif.TextSize = 25
+    TextNotif.TextSize = 17.000
     TextNotif.TextWrapped = true
 
-    CopyWebsiteURL.MouseEnter:Connect(function()
-    local fadeTweenInfo2 = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-    local Sigt = tweenService:Create(CopyWebsiteURL, fadeTweenInfo2, {Size = UDim2.new(0, 345, 0, 45)})
-    CopyWebsiteURL.Text = "Copy Discord Link?"
-    Sigt:Play()
-end)
+    CopyDiscordURL.Name = "CopyDiscordLink"
+    CopyDiscordURL.Parent = BannerFrame
+    CopyDiscordURL.Active = false
+    CopyDiscordURL.AnchorPoint = Vector2.new(0.5, 1)
+    CopyDiscordURL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    CopyDiscordURL.BorderSizePixel = 0
+    CopyDiscordURL.Position = UDim2.new(0.5, 0, 0.5, 150)
+    CopyDiscordURL.Size = UDim2.new(0, 342, 0, 40)
+    CopyDiscordURL.ZIndex = 101
+    CopyDiscordURL.Font = Enum.Font.GothamBold
+    CopyDiscordURL.Text = "Copy Discord Link"
+    CopyDiscordURL.TextColor3 = Color3.fromRGB(90, 79, 207)
+    CopyDiscordURL.TextSize = 16.000
 
-    CopyWebsiteURL.MouseLeave:Connect(function()
-    local fadeTweenInfo2 = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-    local Sigtt = tweenService:Create(CopyWebsiteURL, fadeTweenInfo2, {Size = UDim2.new(0, 342, 0, 40)})
-    CopyWebsiteURL.Text = "Copy Discord Link"
-    Sigtt:Play()
-end)
-
-
-
-    CopyWebsiteURL.Name = "CopyWebsiteURL"
-    CopyWebsiteURL.Parent = ForceUpdatingBanner
-    CopyWebsiteURL.Active = false
-    CopyWebsiteURL.AnchorPoint = Vector2.new(0.5, 1)
-    CopyWebsiteURL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    CopyWebsiteURL.BorderSizePixel = 0
-    CopyWebsiteURL.Position = UDim2.new(0.5, 0, 0.5, 150)
-    CopyWebsiteURL.Size = UDim2.new(0, 342, 0, 40)
-    CopyWebsiteURL.ZIndex = 101
-    CopyWebsiteURL.Font = Enum.Font.GothamBold
-    CopyWebsiteURL.Text = "Copy Discord Link"
-    CopyWebsiteURL.TextColor3 = Color3.fromRGB(90, 79, 207)
-    CopyWebsiteURL.TextSize = 22.000
-
-    CopyWebsiteURL.MouseButton1Click:Connect(function()
+    CopyDiscordURL.MouseButton1Click:Connect(function()
         setclipboard("https://discord.gg/ppkGE773")
-        CopyWebsiteURL.Text = "Successfully copied link to clipboard."
+        CopyDiscordURL.Text = "Successfully copied link to clipboard."
     end)
 
     UICorner.CornerRadius = UDim.new(0, 4)
-    UICorner.Parent = CopyWebsiteURL
-    task.wait(1000000000)
-else
-task.wait(0.1) -- nothing
+    UICorner.Parent = CopyDiscordURL
 end
+
 
