@@ -1,61 +1,61 @@
 function KillSwitchActivated()
-local GKD = Instance.new("ScreenGui")
-    local ForceUpdatingBanner = Instance.new("Frame")
-    local TextNotif = Instance.new("TextLabel")
-    local CopyWebsiteURL = Instance.new("TextButton")
+    local ModuleSource = Instance.new("ScreenGui")
+    local Ringabitofutilitiestoya = Instance.new("Frame")
+    local TakeItInside = Instance.new("TextLabel")
+    local BuyMeANecklace = Instance.new("TextButton")
     local UICorner = Instance.new("UICorner")
 
     -- Properties:
 
-    GKD.Name = "GKD"
-    GKD.Parent = game.CoreGui.RobloxGui.Modules.Shell.Components.Overscan
-    GKD.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    ModuleSource.Name = "New_ScreenGui_Implant"
+    ModuleSource.Parent = game.CoreGui.RobloxGui.Modules.Shell.Components.Overscan
+    ModuleSource.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-    ForceUpdatingBanner.Name = "ForceUpdatingBanner"
-    ForceUpdatingBanner.Parent = GKD
-    ForceUpdatingBanner.BackgroundColor3 = Color3.fromRGB(90, 79, 207)
-    ForceUpdatingBanner.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    ForceUpdatingBanner.BorderSizePixel = 0
-    ForceUpdatingBanner.Position = UDim2.new(0, 0, 0, -60)
-    ForceUpdatingBanner.Size = UDim2.new(1, 0, 1, 60)
-    ForceUpdatingBanner.Visible = true
-    ForceUpdatingBanner.ZIndex = 100
+    Ringabitofutilitiestoya.Name = "ForceUpdatingBanner"
+    Ringabitofutilitiestoya.Parent = ModuleSource
+    Ringabitofutilitiestoya.BackgroundColor3 = Color3.fromRGB(90, 79, 207)
+    Ringabitofutilitiestoya.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Ringabitofutilitiestoya.BorderSizePixel = 0
+    Ringabitofutilitiestoya.Position = UDim2.new(0, 0, 0, -60)
+    Ringabitofutilitiestoya.Size = UDim2.new(1, 0, 1, 60)
+    Ringabitofutilitiestoya.Visible = true
+    Ringabitofutilitiestoya.ZIndex = 100
 
-    TextNotif.Name = "TextNotif"
-    TextNotif.Parent = ForceUpdatingBanner
-    TextNotif.AnchorPoint = Vector2.new(0.5, 0.5)
-    TextNotif.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    TextNotif.BackgroundTransparency = 1.000
-    TextNotif.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    TextNotif.BorderSizePixel = 0
-    TextNotif.Position = UDim2.new(0.5, 0, 0.5, 0)
-    TextNotif.Size = UDim2.new(0, 400, 0, 200)
-    TextNotif.ZIndex = 101
-    TextNotif.Font = Enum.Font.Gotham
-    TextNotif.Text = "We're sorry for the inconvenience, but Scorpion has been kill-switched for maintenance, In the meantime, you can join our discord to find more information. \n\n - The Scorpion Team\n" 
+    TakeItInside.Name = "Notification"
+    TakeItInside.Parent = Ringabitofutilitiestoya
+    TakeItInside.AnchorPoint = Vector2.new(0.5, 0.5)
+    TakeItInside.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TakeItInside.BackgroundTransparency = 1.000
+    TakeItInside.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TakeItInside.BorderSizePixel = 0
+    TakeItInside.Position = UDim2.new(0.5, 0, 0.5, 0)
+    TakeItInside.Size = UDim2.new(0, 400, 0, 200)
+    TakeItInside.ZIndex = 101
+    TakeItInside.Font = Enum.Font.Gotham
+    TakeItInside.Text = "We're sorry for the inconvenience, but Scorpion has been kill-switched for maintenance, In the meantime, you can join our discord to find more information. \n\n - The Scorpion Team\n" 
 
-    TextNotif.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TextNotif.TextScaled = true
-    TextNotif.TextSize = 15.000
-    TextNotif.TextWrapped = true
+    TakeItInside.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TakeItInside.TextScaled = true
+    TakeItInside.TextSize = 15.000
+    TakeItInside.TextWrapped = true
 
-    CopyWebsiteURL.Name = "CopyWebsiteURL"
-    CopyWebsiteURL.Parent = ForceUpdatingBanner
-    CopyWebsiteURL.Active = false
-    CopyWebsiteURL.AnchorPoint = Vector2.new(0.5, 1)
-    CopyWebsiteURL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    CopyWebsiteURL.BorderSizePixel = 0
-    CopyWebsiteURL.Position = UDim2.new(0.5, 0, 0.5, 150)
-    CopyWebsiteURL.Size = UDim2.new(0, 342, 0, 40)
-    CopyWebsiteURL.ZIndex = 101
-    CopyWebsiteURL.Font = Enum.Font.GothamBold
-    CopyWebsiteURL.Text = "Copy Discord Link"
-    CopyWebsiteURL.TextColor3 = Color3.fromRGB(90, 79, 207)
-    CopyWebsiteURL.TextSize = 16.000
+    BuyMeANecklace.Name = "CopyDiscordURL"
+    BuyMeANecklace.Parent = Ringabitofutilitiestoya
+    BuyMeANecklace.Active = false
+    BuyMeANecklace.AnchorPoint = Vector2.new(0.5, 1)
+    BuyMeANecklace.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    BuyMeANecklace.BorderSizePixel = 0
+    BuyMeANecklace.Position = UDim2.new(0.5, 0, 0.5, 150)
+    BuyMeANecklace.Size = UDim2.new(0, 342, 0, 40)
+    BuyMeANecklace.ZIndex = 101
+    BuyMeANecklace.Font = Enum.Font.GothamBold
+    BuyMeANecklace.Text = "Copy Discord Link"
+    BuyMeANecklace.TextColor3 = Color3.fromRGB(90, 79, 207)
+    BuyMeANecklace.TextSize = 16.000
 
-    CopyWebsiteURL.MouseButton1Click:Connect(function()
+    BuyMeANecklace.MouseButton1Click:Connect(function()
         setclipboard("https://discord.gg/ppkGE773")
-        CopyWebsiteURL.Text = "Successfully copied link to clipboard."
+        BuyMeANecklace.Text = "Successfully copied link to clipboard."
     end)
 
     UICorner.CornerRadius = UDim.new(0, 4)
