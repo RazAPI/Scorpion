@@ -1,5 +1,5 @@
 local latestVersion = "4.5"
-local outdatedVersion = "4.4
+local outdatedVersion = "4.4"
 local tweenService = game:GetService("TweenService")
 
 if (localVersion == outdatedVersion) then
