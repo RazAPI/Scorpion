@@ -1,4 +1,9 @@
 function KillSwitchActivated()
+local latestVersion = "4.599"
+local outdatedVersion = "4.497"
+local localVersion = "4.599"
+
+if localVersion == outdatedVersion then
     local ModuleSource = Instance.new("ScreenGui")
     local Ringabitofutilitiestoya = Instance.new("Frame")
     local TakeItInside = Instance.new("TextLabel")
@@ -73,3 +78,4 @@ function KillSwitchDisabled()
   KillSwitchActivated = false
 end
 KillSwitchDisabled()
+end
