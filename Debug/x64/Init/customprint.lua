@@ -1,7 +1,7 @@
--- Son of a bitch, insalada please remind your good old friend known as Carot to add some actual customprint functions. They completely work
+scr = {}
 
 
-getgenv().sli_print = function(text)
+scr.print = function(text)
     print(text)
     task.wait(.025)
     local msg = game:GetService("CoreGui").DevConsoleMaster.DevConsoleWindow.DevConsoleUI:WaitForChild("MainView").ClientLog[tostring(#game:GetService("CoreGui").DevConsoleMaster.DevConsoleWindow.DevConsoleUI.MainView.ClientLog:GetChildren())-1].msg
