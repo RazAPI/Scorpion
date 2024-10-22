@@ -72,7 +72,7 @@ function main:Begin(PROPS)
     Window.Name = "Window"
     Window.Parent = ImGui
     Window.Active = true
-    Window.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+    Window.BackgroundColor3 = Color3.fromRGB(21, 22, 23)
     Window.BackgroundTransparency = 0.050
     Window.ClipsDescendants = true
     Window.Position = UDim2.new(0.283211678, 0, 0.155285195, 0)
@@ -300,9 +300,9 @@ function main:Begin(PROPS)
         TextBox_ElementInput.BackgroundColor3 = Color3.fromRGB(41, 74, 122)
         TextBox_ElementInput.BorderColor3 = Color3.fromRGB(74, 74, 83)
         TextBox_ElementInput.ClipsDescendants = true
-        TextBox_ElementInput.Size = UDim2.new(5, 0, 1, 0)
+        TextBox_ElementInput.Size = UDim2.new(5, 0, 5, 0)
         TextBox_ElementInput.ClearTextOnFocus = false
-        TextBox_ElementInput.FontFace = GetFont()
+        TextBox_ElementInput.FontFace = Font.fromId(16658246179)
         TextBox_ElementInput.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
         TextBox_ElementInput.ShowNativeInput = false
         TextBox_ElementInput.Text = ""
