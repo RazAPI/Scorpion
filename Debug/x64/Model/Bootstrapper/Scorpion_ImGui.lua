@@ -234,19 +234,15 @@ function main:Begin(PROPS)
         Button_Element.BackgroundColor3 = Color3.fromRGB(41, 74, 122)
         Button_Element.BorderColor3 = Color3.fromRGB(74, 74, 83)
         
-
+        -- Position the button below the textbox
         Button_Element.Position = UDim2.new(0, 0, 0, TextBox_ElementInput.AbsolutePosition.Y + TextBox_ElementInput.AbsoluteSize.Y + 10)
-        
-        Button_Element.Size = UDim2.new(0, 21, 0, 23)
+        Button_Element.Size = UDim2.new(0, 100, 0, 30)  -- Adjust size as needed
         Button_Element.FontFace = Font.fromId(16658246179)
-        Button_Element.Text = TextDisplay
+        Button_Element.Text = "Execute"  -- Set the button text
         Button_Element.TextColor3 = Color3.fromRGB(255, 255, 255)
         Button_Element.TextSize = 17.000
-    
-        Button_ElementPadding.Name = "Button_ElementPadding"
-        Button_ElementPadding.Parent = Button_Element
-        Button_ElementPadding.PaddingLeft = UDim.new(0, 6)
-        Button_ElementPadding.PaddingRight = UDim.new(0, 6)
+Button_Element.TextXAlignment = Enum.TextXAlignment.Left
+Button_Element.TextYAlignment = Enum.TextYAlignment.Top
     
         Button_Element.Activated:Connect(function(inputObject, clickCount)
             if inputObject.UserInputType.Name == "MouseButton1" then 
