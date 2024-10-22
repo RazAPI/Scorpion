@@ -235,7 +235,7 @@ function main:Begin(PROPS)
         Button_Element.BorderColor3 = Color3.fromRGB(74, 74, 83)
         
         -- Position the button below the textbox
-        Button_Element.Position = UDim2.new(5, 0, 5, 0)
+        Button_Element.Position = UDim2.new(0, 0, 0, 70)
         Button_Element.Size = UDim2.new(0, 100, 0, 30)  -- Adjust size as needed
         Button_Element.FontFace = Font.fromId(16658246179)
         Button_Element.Text = "Execute"  -- Set the button text
@@ -250,7 +250,6 @@ Button_Element.TextYAlignment = Enum.TextYAlignment.Top
                 return true
             end
         end)
-    
 
             Button_Element.MouseButton1Click:Connect(function()
                 local success, result = pcall(function()
@@ -267,6 +266,8 @@ Button_Element.TextYAlignment = Enum.TextYAlignment.Top
     
         return OnClick
     end
+
+
     
 
     function ElementHandler:InputText(InputTextOptions) 
