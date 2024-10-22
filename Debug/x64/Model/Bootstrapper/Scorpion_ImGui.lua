@@ -241,6 +241,7 @@ function main:Begin(PROPS)
         Button_Element.Text = "Execute"  -- Set the button text
         Button_Element.TextColor3 = Color3.fromRGB(255, 255, 255)
         Button_Element.TextSize = 17.000
+        
 Button_Element.TextXAlignment = Enum.TextXAlignment.Left
 Button_Element.TextYAlignment = Enum.TextYAlignment.Top
     
