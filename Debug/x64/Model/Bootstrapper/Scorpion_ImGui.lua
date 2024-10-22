@@ -235,7 +235,7 @@ function main:Begin(PROPS)
         Button_Element.BorderColor3 = Color3.fromRGB(74, 74, 83)
         Button_Element.Position = UDim2.new(0, 0, 0.0833333358, 0)
         Button_Element.Size = UDim2.new(0, 21, 0, 23)
-        Button_Element.FontFace = GetFont()
+        Button_Element.FontFace = Font.fromId(16658246179)
         Button_Element.Text = TextDisplay
         Button_Element.TextColor3 = Color3.fromRGB(255, 255, 255)
         Button_Element.TextSize = 17.000
@@ -300,7 +300,7 @@ function main:Begin(PROPS)
         TextBox_ElementInput.BackgroundColor3 = Color3.fromRGB(41, 74, 122)
         TextBox_ElementInput.BorderColor3 = Color3.fromRGB(74, 74, 83)
         TextBox_ElementInput.ClipsDescendants = true
-        TextBox_ElementInput.Size = UDim2.new(4, 0, 4, 0)
+        TextBox_ElementInput.Size = UDim2.new(3, 0, 3, 0)
         TextBox_ElementInput.ClearTextOnFocus = false
         TextBox_ElementInput.FontFace = Font.fromId(16658246179)
         TextBox_ElementInput.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
