@@ -233,7 +233,7 @@ function main:Begin(PROPS)
         Button_Element.Parent = WindowElements
         Button_Element.BackgroundColor3 = Color3.fromRGB(41, 74, 122)
         Button_Element.BorderColor3 = Color3.fromRGB(74, 74, 83)
-        Button_Element.Position = UDim2.new(0, 0, 0.0833333358, 0)
+        Button_Element.Position = UDim2.new(1, 0, 4, 10)
         Button_Element.Size = UDim2.new(0, 21, 0, 23)
         Button_Element.FontFace = Font.fromId(16658246179)
         Button_Element.Text = TextDisplay
