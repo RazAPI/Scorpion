@@ -300,15 +300,16 @@ function main:Begin(PROPS)
         TextBox_ElementInput.BackgroundColor3 = Color3.fromRGB(41, 74, 122)
         TextBox_ElementInput.BorderColor3 = Color3.fromRGB(74, 74, 83)
         TextBox_ElementInput.ClipsDescendants = true
-        TextBox_ElementInput.Size = UDim2.new(5, 0, 5, 0)
+        TextBox_ElementInput.Size = UDim2.new(4, 0, 4, 0)
         TextBox_ElementInput.ClearTextOnFocus = false
         TextBox_ElementInput.FontFace = Font.fromId(16658246179)
         TextBox_ElementInput.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
         TextBox_ElementInput.ShowNativeInput = false
-        TextBox_ElementInput.Text = ""
+        TextBox_ElementInput.Text = "Welcome to Scorpion! (ImGui Edition)"
         TextBox_ElementInput.TextColor3 = Color3.fromRGB(221, 221, 221)
         TextBox_ElementInput.TextSize = 16.000
         TextBox_ElementInput.TextXAlignment = Enum.TextXAlignment.Left
+        TextBox_ElementInput.TextYAlignment = Enum.TextYAlignment.Top
 
         TextBox_ElementInputPadding.Name = "TextBox_ElementInputPadding"
         TextBox_ElementInputPadding.Parent = TextBox_ElementInput
