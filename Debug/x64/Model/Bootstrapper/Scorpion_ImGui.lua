@@ -129,7 +129,7 @@ function main:Begin(PROPS)
     WindowDisplayName.BackgroundTransparency = 1.000
     WindowDisplayName.Position = UDim2.new(0.5, 0, 0.5, 0)
     WindowDisplayName.Size = UDim2.new(1, 0, 1, 0)
-    WindowDisplayName.FontFace = Font.new("rbxassetid://16658246179", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+    WindowDisplayName.FontFace = Font.fromId(12187362578)
     WindowDisplayName.Text = "Scorpion - v4.6"
     WindowDisplayName.TextColor3 = Color3.fromRGB(225, 225, 225)
     WindowDisplayName.TextSize = 16.000
