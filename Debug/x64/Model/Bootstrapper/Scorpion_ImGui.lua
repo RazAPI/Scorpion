@@ -20,6 +20,8 @@ function main:Begin(PROPS)
         return
     end
 
+
+
     local MenuOptions = PROPS or {
         Name = PROPS.Name or "imgui-rbx | alpha 0.1",
         Width = PROPS.Width or 574,
@@ -38,7 +40,9 @@ function main:Begin(PROPS)
         end
     end
 
-
+    local function GetFont() 
+        return Font.fromId(12187374954)                                                     
+    end
 
     local ImGui = Instance.new("ScreenGui")
     local Window = Instance.new("Frame")
@@ -129,8 +133,8 @@ function main:Begin(PROPS)
     WindowDisplayName.BackgroundTransparency = 1.000
     WindowDisplayName.Position = UDim2.new(0.5, 0, 0.5, 0)
     WindowDisplayName.Size = UDim2.new(1, 0, 1, 0)
-    WindowDisplayName.FontFace = Font.fromId(12187362578)
-    WindowDisplayName.Text = "Scorpion - v4.6"
+    WindowDisplayName.FontFace = Font.fromId(16658246179)
+    WindowDisplayName.Text = PROPS.Name
     WindowDisplayName.TextColor3 = Color3.fromRGB(225, 225, 225)
     WindowDisplayName.TextSize = 16.000
     WindowDisplayName.TextXAlignment = Enum.TextXAlignment.Left
