@@ -224,46 +224,50 @@ function main:Begin(PROPS)
         Label_Element.TextXAlignment = Enum.TextXAlignment.Left
     end
 
-    function ElementHandler:Button(TextDisplay) 
+    function ElementHandler:Button(TextDisplay)
         local Button_Element = Instance.new("TextButton")
         local Button_ElementPadding = Instance.new("UIPadding")
         local OnClick = {}
-
+    
         Button_Element.Name = "Button_Element"
         Button_Element.Parent = WindowElements
         Button_Element.BackgroundColor3 = Color3.fromRGB(41, 74, 122)
         Button_Element.BorderColor3 = Color3.fromRGB(74, 74, 83)
-        Button_Element.Position = UDim2.new(0, 0, 0.0833333358, 0)
+        
+
+        Button_Element.Position = UDim2.new(0, 0, 0, TextBox_ElementInput.AbsolutePosition.Y + TextBox_ElementInput.AbsoluteSize.Y + 10)
+        
         Button_Element.Size = UDim2.new(0, 21, 0, 23)
-        Button_Element.FontFace = GetFont()
+        Button_Element.FontFace = Font.fromId(16658246179)
         Button_Element.Text = TextDisplay
         Button_Element.TextColor3 = Color3.fromRGB(255, 255, 255)
         Button_Element.TextSize = 17.000
-
+    
         Button_ElementPadding.Name = "Button_ElementPadding"
         Button_ElementPadding.Parent = Button_Element
         Button_ElementPadding.PaddingLeft = UDim.new(0, 6)
         Button_ElementPadding.PaddingRight = UDim.new(0, 6)
-
+    
         Button_Element.Activated:Connect(function(inputObject, clickCount)
             if inputObject.UserInputType.Name == "MouseButton1" then 
                 return true
             end
         end)
-
-        function OnClick:Connect(Function) 
+    
+        function OnClick:Connect(Function)
             Button_Element.MouseButton1Click:Connect(Function)
         end
-                
+    
         local box = Button_Element
         local text = box.Text
-
+    
         local size = box.TextBounds.X
-        
+    
         if game:IsLoaded() then box.Size = UDim2.new(0, size + 20, 0, 23) end
-
+    
         return OnClick
     end
+    
 
     function ElementHandler:InputText(InputTextOptions) 
         local TextBox_Element = Instance.new("Frame")
@@ -300,7 +304,7 @@ function main:Begin(PROPS)
         TextBox_ElementInput.BackgroundColor3 = Color3.fromRGB(41, 74, 122)
         TextBox_ElementInput.BorderColor3 = Color3.fromRGB(74, 74, 83)
         TextBox_ElementInput.ClipsDescendants = true
-        TextBox_ElementInput.Size = UDim2.new(4, 0, 4, 0)
+        TextBox_ElementInput.Size = UDim2.new(3, 0, 3, 0)
         TextBox_ElementInput.ClearTextOnFocus = false
         TextBox_ElementInput.FontFace = Font.fromId(16658246179)
         TextBox_ElementInput.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
