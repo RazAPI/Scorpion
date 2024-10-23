@@ -9,17 +9,15 @@
 
 > [!CAUTION]
 > Please be aware when using Scorpion, You may experience bugs with LuaArmor and may get blacklisted from scripts that use it.
-> Dex Explorer does not reportedly work sadly, We are trying our hardest to get our shit back up.
 
-
-> Welcome to Scorpion's read-me, An internal used for being executed inside of (executors)
-> Scorpion is used for enhancing your scripting experience with Solara, (Executor support will be added if im vulnerable.)
 
 > [!IMPORTANT]
 > Scorpion's main-purpose is to increase the stability of your exploit by maxing it's environment to the max!
 > With Scorpion: You can gain over 85% UNC and 89% RENC, (whatever in that case...)
 > Including a built-in ByteCode LuaU Interpeter, Fiu, and giving you the most access (already) within Roblox's Services automatically.
 > With smooth-built-in animations using TweenService, We can guarantee NO FPS drops with using Scorpion!
+
+
 
 # Why?
 
