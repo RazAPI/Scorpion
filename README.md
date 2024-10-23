@@ -19,7 +19,7 @@
 
 # Does it include a documentation?
 
-- Yes, it does! You can view it right  [https://github.com/RazAPI/Scorpion/blob/main/Documentation.md](Here)
+- Yes, it does! You can view it right  [here.](https://github.com/RazAPI/Scorpion/blob/main/Documentation.md)
 
 # Why?
 
