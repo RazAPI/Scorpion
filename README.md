@@ -17,7 +17,9 @@
 > Including a built-in ByteCode LuaU Interpeter, Fiu, and giving you the most access (already) within Roblox's Services automatically.
 > With smooth-built-in animations using TweenService, We can guarantee NO FPS drops with using Scorpion!
 
+# Does it include a documentation?
 
+- Yes, it does! You can view it right  [https://github.com/RazAPI/Scorpion/blob/main/Documentation.md](Here)
 
 # Why?
 
