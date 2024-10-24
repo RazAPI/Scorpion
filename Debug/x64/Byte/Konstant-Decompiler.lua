@@ -42,3 +42,4 @@ end
 getgenv().decompile = decompile
 getgenv().disassemble = disassemble
 
+-- by lovrewe
