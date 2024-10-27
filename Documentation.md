@@ -28,6 +28,8 @@ scr.protect_gui -- Does the same thing synapse x does, No it's not gethui at all
 
 scr.get_closure -- Returns closure as callback stack size
 
+scr.unprotect_gui -- Unprotects the Gui
+
 
 -- More things (not our functions) listed down there, which helped us with a bunch of things.
 
@@ -55,9 +57,27 @@ syn.queue_on_teleport -- Yes, it still does return the same thing as queue on te
 
 syn.request -- Returns request
 
+syn.killprocess -- Kills the Roblox Process
+
 syn.hook -- returns hookfunction
 
-syn.protect_gui -- Does the same thing, and sets the parent to ScorpionContainer, which is game.CoreGui.RobloxGui.Modules.Shell.Components.Overscan.MODULEINTERPETER_INTACTWITHINX07178CD6X677111650258302937LIAYZ86829HGUHTUYSER32KRN2376156
+syn.protect_gui -- Actually has a purpose now
+
+syn.writefile -- Writes a file to workspace
+
+syn.readfile -- Reads a file in workspace
+
+syn.setthreadidentity (or set_thread_identity) -- Sets the current identity
+
+syn.getthreadidentity (or get_thread_identity) -- Gets the current identity
+
+syn.toast_notification -- Returns a toast notification
+
+syn.cache -- Can't list all the other cache functions cuz im too lazy
+
+syn.is_beta -- Checks if you're on a beta version of Synapse (Ok at this point there's no need of this)
+
+syn.setreadonly -- Sets a table as readonly (I have to go shit)
 
 is_synapse_function -- Checks if synapse's functions are registered (Removing lately)
 
