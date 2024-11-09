@@ -72,5 +72,5 @@ end
 function KillSwitchDisabled()
   KillSwitchActivated = false
 end
+
 KillSwitchDisabled()
-end
