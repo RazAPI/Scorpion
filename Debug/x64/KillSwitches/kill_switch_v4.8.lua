@@ -1,9 +1,4 @@
 function KillSwitchActivated()
-local latestVersion = "4.803"
-local outdatedVersion = "4.802"
-local localVersion = "4.803"
-
-if localVersion == outdatedVersion then
     local ModuleSource = Instance.new("ScreenGui")
     local Ringabitofutilitiestoya = Instance.new("Frame")
     local TakeItInside = Instance.new("TextLabel")
@@ -37,7 +32,7 @@ if localVersion == outdatedVersion then
     TakeItInside.Size = UDim2.new(0, 400, 0, 200)
     TakeItInside.ZIndex = 101
     TakeItInside.Font = Enum.Font.Gotham
-    TakeItInside.Text = "We're sorry for the inconvience, but this version of Scorpion has been killswitched, due to being outdated.\n\n Need more information? Join our Discord Server down below! \n\n - Best Regards,\nRazAPI" 
+    TakeItInside.Text = "We're sorry for the inconvience, but this version of Scorpion has been killswitched. \n\n Need more information? Join our Discord Server down below! \n\n - Best Regards,\nRazAPI" 
 
     TakeItInside.TextColor3 = Color3.fromRGB(255, 255, 255)
     TakeItInside.TextScaled = true
