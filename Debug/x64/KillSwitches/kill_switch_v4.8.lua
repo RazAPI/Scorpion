@@ -1,7 +1,7 @@
 function KillSwitchActivated()
-local latestVersion = "4.605"
-local outdatedVersion = "4.604"
-local localVersion = "4.605"
+local latestVersion = "4.803"
+local outdatedVersion = "4.802"
+local localVersion = "4.803"
 
 if localVersion == outdatedVersion then
     local ModuleSource = Instance.new("ScreenGui")
