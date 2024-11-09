@@ -28,6 +28,8 @@ scr.findnilinstances -- Finds nil instances, and returns them.
 scr.ctable -- Creates a new table
 scr.get_closure -- Returns main closure/ callback stack usage
 
+scr.get_address -- gets the address of a function [no 0x]
+
 scr.filetable -- Returns the file table
 
 scr.setnilinstances -- Sets a instance to nil (Supports every service, if im not stupid enough)
