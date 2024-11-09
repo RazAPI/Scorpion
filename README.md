@@ -20,7 +20,17 @@
 # Does it include a documentation?
 
 - Yes, it does! You can view it right  [here.](https://github.com/RazAPI/Scorpion/blob/main/Documentation.md)
+- If you're interested, here are some custom functions that can be used. (Over-powered, and boring...)
 
+ ```lua
+ scr.get_address(getrunningscripts) -- As an example, this will print out the original address of the function.
+ scr.protect_script -- Protects a script inside CoreGui, or for example it could be used in PlayerGui.
+ scr.protect_gui -- Parents to Scorpion Container
+ scr.setnilinstance -- Sets an instance's parent to nil.
+ scr.killinstance -- Destroys an instance
+ scr.findnilinstances -- Finds all nil instances, basically like getnilinstances but it'll only search for ModuleScripts
+ scr.ctable -- Create a table, for no reason.
+ ```
 # Why?
 
 - I genuinely have no idea why i've made this, i was bored to the point this was actually supposed to be a hub.
@@ -40,7 +50,21 @@
 
     If you'd also like to join Scorpion, you can check out the website to see more information.
     
-# Preview: ![image](https://github.com/user-attachments/assets/5c6056e4-2203-4a47-b841-243bd045e166)
+# Preview: ![image](https://github.com/user-attachments/assets/4bf04dbd-e093-49c5-b906-ed3329ad8fe7)
 
-# UNC-Test: ![image](https://github.com/user-attachments/assets/bca739f7-9ccc-4862-8098-d47a67edd96d)
 
+# UNC-Test: ![image](https://github.com/user-attachments/assets/00e0ad10-dd5a-4cd8-a465-240435071cc3)
+
+# More Screenshots (Some of the code, so you know the custom functions aren't skidded)
+
+![image](https://github.com/user-attachments/assets/428cd630-930c-4bf0-bf01-23b679a0a160)
+
+![image](https://github.com/user-attachments/assets/071731d0-08ec-4374-9876-8195a27cb6f9)
+
+![image](https://github.com/user-attachments/assets/9bed2d87-3047-446a-be46-cc4d81af2f3f)
+
+![image](https://github.com/user-attachments/assets/970d3e08-d6cd-491f-95a5-3744e0c4bfed)
+
+![image](https://github.com/user-attachments/assets/9a826150-3041-438d-a9fb-104562965a1b)
+
+Anyways, that's it. Thanks for viewing!
