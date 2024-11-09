@@ -4,6 +4,7 @@
 --TODO: stop listing nested upvalues and use them directly
 --TODO: use letter "u" instead of "v" for upvalues
 
+
 -- TEMPORARY
 local POINT_TYPE_END = 0
 local POINT_TYPE_ELSE = 1
@@ -42,8 +43,6 @@ local Reader = LoadFromUrl("Reader")
 local Strings = LoadFromUrl("Strings")
 local Luau = LoadFromUrl("Luau")
 
-
-
 local LuauOpCode = Luau.OpCode
 local LuauBytecodeTag = Luau.BytecodeTag
 local LuauBytecodeType = Luau.BytecodeType
@@ -80,16 +79,14 @@ local function Decompile(bytecode)
 		readStringTable()
 
 		local userdataTypes = {}
-		if LuauCompileUserdataInfo then
-			while true do
-				local index = reader:nextByte()
-				if index == 0 then -- end
-					break
-				end
-
-				local nameRef = reader:nextVarInt()
-				userdataTypes[index] = nameRef
+		while true do
+			local index = reader:nextByte()
+			if index == 0 then -- end
+				break
 			end
+
+			local nameRef = reader:nextVarInt()
+			userdataTypes[index] = nameRef
 		end
 
 		local protoTable = {}
