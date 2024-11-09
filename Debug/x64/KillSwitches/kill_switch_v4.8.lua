@@ -5,8 +5,6 @@ function KillSwitchActivated()
     local BuyMeANecklace = Instance.new("TextButton")
     local UICorner = Instance.new("UICorner")
 
-    -- Properties:
-
     ModuleSource.Name = "New_ScreenGui_Implant"
     ModuleSource.Parent = game.CoreGui.RobloxGui.Modules.Shell.Components.Overscan
     ModuleSource.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -69,6 +67,7 @@ function KillSwitchActivated()
     task.wait(2)
     MainScorpion:Destroy()
 end
+
 function KillSwitchDisabled()
   KillSwitchActivated = false
 end
