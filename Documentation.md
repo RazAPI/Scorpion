@@ -143,3 +143,26 @@ run_on_actor -- Not usable, maybe i'll just make it override execution to anothe
 enable_Images -- Removes TextButtons like Execute, Clear, and Attach. and instead replaces them with ImageButtons with proper icons (Not Implemented)
 
 ```
+
+# Some more functions
+
+```lua
+
+-- This is basically just used for overriding CoreScripts and bytecode partitions, which are useful for compressing LZ4, and more.
+
+bytecode = {}
+
+bytecode.newMemory.CoreScript.Bytes = 300 -- Size of the bytes inside CoreScript's Partition
+bytecode.newMemory.CoreScript.OverRidePartition = false -- Default setting
+bytecode.newMemory.CoreScript.OverRideBytes = true  -- Default setting
+
+bytecode.compress_size = 300 -- Size of left of the compression size
+bytecode.compress_active = false -- Whether to check if bytecode compressing is on or not
+
+-- For example
+
+![image](https://github.com/user-attachments/assets/485c4552-a3f2-4e94-aa1b-c3182a567f94)
+
+-- Ok yeah that's it
+```
+
