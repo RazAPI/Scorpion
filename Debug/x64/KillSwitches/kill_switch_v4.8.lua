@@ -59,7 +59,7 @@ if localVersion == outdatedVersion then
     BuyMeANecklace.TextSize = 16.000
 
     BuyMeANecklace.MouseButton1Click:Connect(function()
-        setclipboard("https://discord.gg/ppkGE773")
+        setclipboard("https://discord.gg/68ANVyvz")
         BuyMeANecklace.Text = "Successfully copied link to clipboard."
     end)
 
