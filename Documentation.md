@@ -161,8 +161,9 @@ bytecode.compress_active = false -- Whether to check if bytecode compressing is 
 
 -- For example
 
-![image](https://github.com/user-attachments/assets/485c4552-a3f2-4e94-aa1b-c3182a567f94)
+
 
 -- Ok yeah that's it
 ```
 
+![image](https://github.com/user-attachments/assets/172880b2-27ca-4f5e-98d0-b4f1fe5d0ce0)
