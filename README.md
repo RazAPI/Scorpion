@@ -11,7 +11,7 @@
 > Please be aware when using Scorpion, You may experience bugs with LuaArmor and may get blacklisted from scripts that use it.
 
 
-> [!IMPORTANT] Basic Features
+> [!IMPORTANT]
 > ❓ Scorpion's main-purpose is to increase the stability of your exploit by maxing it's environment to the max!
  
 > 📂 With Scorpion: You can gain over 87-88% UNC and 90-91% RENC, (whatever in that case...)
