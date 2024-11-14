@@ -23,6 +23,7 @@ scr.killinstance(game.CoreGui.Your_UI_or_choose_Another_script_whatever) -- Dest
 
 scr.getsignal -- Returns device signal
 
+scr.get_binary -- Returns binary numbers which read as S C O R P I O N
 scr.findnilinstances -- Finds nil instances, and returns them.
 
 scr.ctable -- Creates a new table
