@@ -11,11 +11,27 @@
 > Please be aware when using Scorpion, You may experience bugs with LuaArmor and may get blacklisted from scripts that use it.
 
 
-> [!IMPORTANT]
-> Scorpion's main-purpose is to increase the stability of your exploit by maxing it's environment to the max!
-> With Scorpion: You can gain over 85% UNC and 89% RENC, (whatever in that case...)
-> Including a built-in ByteCode LuaU Interpeter, Fiu, and giving you the most access (already) within Roblox's Services automatically.
-> With smooth-built-in animations using TweenService, We can guarantee NO FPS drops with using Scorpion!
+> [!IMPORTANT] Basic Features
+> ❓ Scorpion's main-purpose is to increase the stability of your exploit by maxing it's environment to the max!
+ 
+> 📂 With Scorpion: You can gain over 87-88% UNC and 90-91% RENC, (whatever in that case...)
+     Guaranteed and people like Salad (insaladarel) who helped me make most of the functions
+ 
+> ⚙️ Including a built-in ByteCode LuaU Interpeter, Fiu, and giving you the most access (already) within Roblox's Services automatically.
+   Instead of using game:GetService, we use FindService for better reserves and faster loading.
+ 
+> 💻 With smooth-built-in animations using TweenService, We can guarantee NO FPS drops with using Scorpion!
+
+> 📜 Including a Decompiler, Konstant. Using plusgiant5's Module, and bytecode compressing improvements built in.
+  Decompiling Scripts on Dex Explorer
+
+> 💉 With Scorpion's Dev Console, it is assured on what actions the Executor is doing, such as
+   Attaching, Executing, Clearing the TextBox, etc.
+
+> 📑 Powerful Custom Functions
+   Scorpion includes a full-side documentation about our library, We included all the useful ones below.
+
+
 
 # Does it include a documentation?
 
@@ -30,6 +46,10 @@
  scr.killinstance -- Destroys an instance
  scr.findnilinstances -- Finds all nil instances, basically like getnilinstances but it'll only search for ModuleScripts
  scr.ctable -- Create a table, for no reason.
+ scr.get_closure -- Returns the main closure
+ scr.getsignal -- By using HttpService, and BrowserService, it'll try to get your original User-Agent (Device, IOS, Windows, Android).
+ scr.filetable -- Prints out all file system functions
+ 
  ```
 # Why?
 
