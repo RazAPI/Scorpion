@@ -57,6 +57,14 @@
         CopyDiscordURL.Text = "Successfully copied link to clipboard."
     end)
 
+CopyDiscord.MouseEnter:Connect(function()
+     CopyDiscordURL.Text = "Copy Discord Link?"
+    end)
+CopyDiscord.MouseLeave:Connect(function()
+     CopyDiscordURL.Text = "Copy Discord Link"
+    end)
+
+
     UICorner.CornerRadius = UDim.new(0, 4)
     UICorner.Parent = CopyDiscordURL
 
