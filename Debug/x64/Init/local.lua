@@ -1,5 +1,5 @@
 -- Credits go to vxsty on MoreUNC for these
-
+-- This isn't used anymore, sadly.
 local funcs = {}
 
 funcs.isreadonly = function(tbl)
