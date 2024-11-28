@@ -59,6 +59,5 @@
 
     UICorner.CornerRadius = UDim.new(0, 4)
     UICorner.Parent = CopyDiscordURL
-end
 
 
