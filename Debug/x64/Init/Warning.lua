@@ -1,10 +1,4 @@
-local latestVersion = "4.5"
-local outdatedVersion = "4.4"
-local tweenService = game:GetService("TweenService")
 
-if (localVersion == outdatedVersion) then
-    -- Credits to 1 F0, even though I was never intended/supposedly allowed to use this.
-    -- Locally just adding a new one now.
     local GetWindowDescendants = Instance.new("ScreenGui")
     local BannerFrame = Instance.new("Frame")
     local NotificationDisplayed = Instance.new("TextLabel")
@@ -37,11 +31,7 @@ if (localVersion == outdatedVersion) then
     NotificationDisplayed.Size = UDim2.new(0, 400, 0, 200)
     NotificationDisplayed.ZIndex = 101
     NotificationDisplayed.Font = Enum.Font.Gotham
-    NotificationDisplayed.Text = "Hi, This version of Scorpion is outdated, and we recommend you switch to the newest version.\n\n - Newest Version: " 
-        .. latestVersion 
-        .. "\n - Current Version: " 
-        .. localVersion 
-        .. "\n\n - RazAPI\n"
+    NotificationDisplayed.Text = "We're sorry for interrupting you, but unfortunately this version of Scorpion is outdated. and we recommend for you to get the newest release."
 
     TextNotif.TextColor3 = Color3.fromRGB(255, 255, 255)
     TextNotif.TextScaled = true
