@@ -32,6 +32,10 @@
     NotificationDisplayed.ZIndex = 101
     NotificationDisplayed.Font = Enum.Font.Gotham
     NotificationDisplayed.Text = "We're sorry for interrupting you, but unfortunately this version of Scorpion is outdated. and we recommend for you to get the newest release."
+    NotificationDisplayed.TextColor3 = Color3.fromRGB(255, 255, 255)
+    NotificationDisplayed.TextScaled = true
+    NotificationDisplayed.TextSize = 17.000
+    NotificationDisplayed.TextWrapped = true
 
     CopyDiscordURL.Name = "CopyDiscordLink"
     CopyDiscordURL.Parent = BannerFrame
