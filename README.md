@@ -71,7 +71,8 @@
 
     If you'd also like to join Scorpion, you can check out the website to see more information.
     
-# Preview: ![image](https://github.com/user-attachments/assets/4bf04dbd-e093-49c5-b906-ed3329ad8fe7)
+# Preview: ![image](https://github.com/user-attachments/assets/b1c5630a-5779-4236-88aa-d399bafe6c0e)
+
 
 
 # UNC-Test: ![image](https://github.com/user-attachments/assets/accec7ad-fd15-4740-ae59-74d212c5f763)
