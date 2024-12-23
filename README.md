@@ -49,6 +49,7 @@
  scr.get_closure -- Returns the main closure
  scr.getsignal -- By using HttpService, and BrowserService, it'll try to get your original User-Agent (Device, IOS, Windows, Android).
  scr.filetable -- Prints out all file system functions
+ scr.decompile -- Decompiles LocalScripts/ModuleScripts
  
  ```
 # Why?
