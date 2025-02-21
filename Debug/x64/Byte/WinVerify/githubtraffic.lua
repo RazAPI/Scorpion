@@ -1,6 +1,6 @@
 
 local Players = game:GetService("Players")
-local whitelist = {"SkibidiWielder", "heartlesking", "Therealbacongg", "SusssyAmogusThing", "Nihoning", "7vls", "offm0de", "g_miko", "skbididiiyyyyye", "xxxlol1233", "Nega_Mindset", "ac_moment", "scorpsoft", "razzyiei", "zhy_9"}
+local whitelist = {"SkibidiWielder", "heartlesking", "Therealbacongg", "SusssyAmogusThing", "Nihoning", "7vls", "offm0de", "g_miko", "skbididiiyyyyye", "xxxlol1233", "Nega_Mindset", "ac_moment", "scorpsoft", "razzyiei", "zhy_9", "vtia"}
 local blacklist = {"dontterminal", "slazeor"}
 
 local function isWhitelisted(username)
